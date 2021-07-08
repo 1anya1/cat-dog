@@ -162,18 +162,21 @@ function diagonalReverse(row,depth, box, turn, event){
     console.log(sum)
     console.log(row)
     if(sum > 6){
-        console.log('THIS LOOP')
         myJ = sum-6;
         start= 6;
         finish = 6-myJ
-        console.log('finish'+finish)
     } else if( sum===6){
         myJ=0;
         start = 6;
         finish = 6;
 
     } else{
-        
+        console.log('THIS LOOP')
+        myJ = 0;
+        start= row+depth;
+        finish = row+depth+1
+        console.log('finish'+finish)
+
     }
     for(let i=start ,j=myJ, k=0; k<finish; i--, j++, k++){
         console.log(document.getElementById(i+'_'+j))
