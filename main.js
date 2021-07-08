@@ -116,19 +116,17 @@ if(difference==0){
     start=0;
     finish=6;
 }else if(difference > 0){
-    console.log(difference)
     start=difference;
     finish=width-difference
     myJ=0;
 } else {
-    console.log(difference)
     start=0;
     myJ = Math.abs(difference);
     finish = width + difference
 }
 
 for(let i=start ,j=myJ; j<finish; i++, j++){
-    console.log(document.getElementById(i+'_'+j))
+    // console.log(document.getElementById(i+'_'+j))
    arr.push(document.getElementById(i+'_'+j).className)  
 }  
 if(arr.length>=4){
@@ -157,20 +155,42 @@ function diagonalReverse(row,depth, box, turn, event){
     let arr=[];
     let widthDistance = width-row-1;
     let distance = 0;
-    // console.log(widthDistance)
-    if(widthDistance<depth){
-        console.log(depth-widthDistance)
-        distance = depth-widthDistance
+    let sum = row+depth
+    let start = 0;
+    let finish = 0;
+    let myJ=0;
+    console.log(sum)
+    console.log(row)
+    if(sum > 6){
+        console.log('THIS LOOP')
+        myJ = sum-6;
+        start= 6;
+        finish = 6-myJ
+        console.log('finish'+finish)
+    } else if( sum===6){
+        myJ=0;
+        start = 6;
+        finish = 6;
+
+    }
+    for(let i=start ,j=myJ, k=0; k<finish; i--, j++, k++){
+        console.log(document.getElementById(i+'_'+j))
+       arr.push(document.getElementById(i+'_'+j).className)  
+    }  
+    // // console.log(widthDistance)
+    // if(widthDistance<depth){
+    //     console.log(depth-widthDistance)
+    //     distance = depth-widthDistance
         
-    }
+    // }
   
-    if(turns >=4){
-        for(let i=row ,j=depth; j>=distance; i++, j--){
-            // console.log(document.getElementById(i+'_'+j))
-           arr.push(document.getElementById(i+'_'+j).className)  
-        }  
-    }
-    // console.log(arr)
+    // if(turns >=4){
+    //     for(let i=row ,j=depth; j>=distance; i++, j--){
+    //         // console.log(document.getElementById(i+'_'+j))
+    //        arr.push(document.getElementById(i+'_'+j).className)  
+    //     }  
+    // }
+    console.log(arr)
     if(arr.length>=4){
         for(i=0 ; i < arr.length ; i++ ){
             if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
