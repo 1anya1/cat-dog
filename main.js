@@ -172,6 +172,8 @@ function diagonalReverse(row,depth, box, turn, event){
         start = 6;
         finish = 6;
 
+    } else{
+        
     }
     for(let i=start ,j=myJ, k=0; k<finish; i--, j++, k++){
         console.log(document.getElementById(i+'_'+j))
