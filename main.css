@@ -1,7 +1,7 @@
 body #board {
   display: flex;
   width: fit-content;
-  padding: 40px;
+  padding: 20px;
   background-color: purple;
 }
 body #board .row {
@@ -17,7 +17,7 @@ body #board .row .box {
   margin: 7px;
 }
 body #board .row .yellow {
-  background-image: url("image/catred.png");
+  background-image: url("image/dog-yellow.png");
   transform: scaleX(-1);
   background-size: cover;
   transform: rotate(30deg);
@@ -27,7 +27,7 @@ body #board .row .yellow {
   z-index: -1;
 }
 body #board .row .red {
-  background-image: url("image/dog-yellow.png");
+  background-image: url("image/catred.png");
   background-size: cover;
   background-repeat: none;
   opacity: 1;

@@ -1,8 +1,8 @@
 
 let player = 0;
 let turns = 0;
-let width = 8; 
-let depth = 7;
+let width = 7; 
+let depth = 6;
 let board = document.getElementById('board')
 let reset = document.getElementById('reset')
 
@@ -108,17 +108,29 @@ let determine = false;
 row = parseInt(row)
 depth = parseInt(depth)
 let arr=[];
-if(depth>row){
-    distance = depth-row;
-} else{
-    distance=0;
+let difference = row-depth
+let start = 0;
+let finish = 0;
+let myJ=0;
+if(difference==0){
+    start=0;
+    finish=6;
+}else if(difference > 0){
+    console.log(difference)
+    start=difference;
+    finish=width-difference
+    myJ=0;
+} else {
+    console.log(difference)
+    start=0;
+    myJ = Math.abs(difference);
+    finish = width + difference
 }
-if(turns >=4){
-    for(let i=row ,j=depth; j>=distance; i--, j--){
-        // console.log(document.getElementById(i+'_'+j))
-       arr.push(document.getElementById(i+'_'+j).className)  
-    }  
-}
+
+for(let i=start ,j=myJ; j<finish; i++, j++){
+    console.log(document.getElementById(i+'_'+j))
+   arr.push(document.getElementById(i+'_'+j).className)  
+}  
 if(arr.length>=4){
     for(i=0 ; i < arr.length ; i++ ){
         if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
@@ -154,11 +166,11 @@ function diagonalReverse(row,depth, box, turn, event){
   
     if(turns >=4){
         for(let i=row ,j=depth; j>=distance; i++, j--){
-            console.log(document.getElementById(i+'_'+j))
+            // console.log(document.getElementById(i+'_'+j))
            arr.push(document.getElementById(i+'_'+j).className)  
         }  
     }
-    console.log(arr)
+    // console.log(arr)
     if(arr.length>=4){
         for(i=0 ; i < arr.length ; i++ ){
             if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
