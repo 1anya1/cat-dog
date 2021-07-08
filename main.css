@@ -10,8 +10,8 @@ body #board .row {
   flex-direction: column;
 }
 body #board .row .box {
-  height: 40px;
-  width: 40px;
+  height: 7vw;
+  width: 7vw;
   border-radius: 50%;
   background-color: white;
   margin: 7px;
@@ -37,7 +37,7 @@ body #board .row .red {
 @keyframes new-item-animation {
   from {
     opacity: 0;
-    transform: translateY(-400px);
+    transform: translateY(-60vw);
     z-index: -1;
   }
   to {
