@@ -1,49 +1,82 @@
+ .rotate{
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}
 body #board {
   display: flex;
   width: fit-content;
-  padding: 20px;
-  background-color: purple;
+  padding: 3vw;
+  background-color: #64BED3;
+  margin: 0 auto;
 }
+body #clicker{
+ display: flex;
+ width: fit-content;
+ padding: 3vw;
+ padding-bottom: 0;
+ margin: 0 auto;
+}
+body #clicker .click{
+  /* display: flex;
+  width: fit-content;
+  height: 7vw;
+  width: 7vw;
+  border-radius: 50%;
+  background-color: pink;
+  margin: 1vw; */
+  /* width: 7vw; 
+  height: 7vw;  */
+  margin: 1vw;
+
+  border-left: 3.45vw solid transparent;
+  border-right: 3.45vw solid transparent;
+  
+  border-top: 5vw solid #f00;
+ }
 body #board .row {
   width: fit-content;
   display: flex;
   flex-direction: column;
+  
+  
 }
 body #board .row .box {
   height: 7vw;
   width: 7vw;
   border-radius: 50%;
+ z-index: 1;
   background-color: white;
-  margin: 7px;
+  margin: 1vw;
 }
 body #board .row .yellow {
   background-image: url("image/dog-yellow.png");
-  transform: scaleX(-1);
   background-size: cover;
-  transform: rotate(30deg);
   background-repeat: none;
   opacity: 1;
-  animation: new-item-animation 0.3s linear forwards;
-  z-index: -1;
+  animation: new-item-animation 10s linear forwards;
+  z-index: 2;
 }
 body #board .row .red {
   background-image: url("image/catred.png");
   background-size: cover;
   background-repeat: none;
   opacity: 1;
-  animation: new-item-animation 0.3s linear forwards;
+  z-index: -1;
+  animation: new-item-animation 10s linear forwards;
 }
 
 @keyframes new-item-animation {
   from {
     opacity: 0;
     transform: translateY(-60vw);
-    z-index: -1;
+ 
   }
   to {
     opacity: 1;
     transform: translateY(0);
     z-index: 1;
+  
   }
 }
 
