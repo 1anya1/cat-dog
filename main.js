@@ -8,6 +8,13 @@ let turn = document.getElementById('players-turn')
 turn.innerHTML = 'Red Turn'
 createClick(width, clicker)
 createBoard(width, depth, board)
+document.getElementById('clicker').addEventListener('click', clickEvent)
+document.getElementById('reset').addEventListener('click', resetBoard)
+document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
+
+
+
+//Creating Clicker for Pawns
 function createClick(width,clicker){
     for(let i=0; i<width; i++){
         let row = document.createElement('div')
@@ -15,8 +22,8 @@ function createClick(width,clicker){
         row.className = 'click';
         clicker.appendChild(row)
     }
-
 }
+//Creating Playing Board
 function createBoard(width, depth, board){
 for(let i=0; i<width; i++){
     let row = document.createElement('div')
@@ -32,6 +39,8 @@ for(let i=0; i<width; i++){
         }
     }
 }
+
+//Click Event
 function clickEvent(event){
     turns++;
     let turn = document.getElementById('players-turn')
@@ -56,10 +65,11 @@ function clickEvent(event){
            diagonal(start, i, box.id, turn, event)
            diagonalReverse(start, i, box.id, turn, event)
            break;
-       } 
-        
+        }    
     }
 }
+
+//Mouse Over event
 function mouseEvent(event){
     event.preventDefault();
     let end = event.srcElement.id.split('')
@@ -67,10 +77,19 @@ function mouseEvent(event){
     let box = document.getElementById(start);
     console.log(box)
 }
-document.getElementById('clicker').addEventListener('click', clickEvent)
-document.getElementById('reset').addEventListener('click', resetBoard)
-document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
 
+//Checking Winning Category
+function determineWinner(){
+    if(player ===1){
+        turn.innerHTML = 'Red Player Won!'
+    } else{
+        turn.innerHTML = 'Yellow Player Won!'
+    }
+}
+function removeListners(){
+    document.getElementById('board').removeEventListener('click',clickEvent)
+    document.getElementById('clicker').removeEventListener('click', clickEvent)
+}
 
 function vertical(row,depth, box, turn, event ){
     let winningArr =[]
@@ -82,25 +101,16 @@ function vertical(row,depth, box, turn, event ){
         let val;
         for(let i=0; i<3; i++){
             if(winningArr[i] === winningArr[i+1] && winningArr[i] === winningArr[i+2] && winningArr[i] === winningArr[i+3] ){
-                val= true; 
-               
+                val= true;   
             }
         }
         if(val===true){
-            document.getElementById('board').removeEventListener('click',clickEvent)
-            document.getElementById('clicker').removeEventListener('click', clickEvent)
+            removeListners()
             determineWinner()
         }
-   
     }
 }
-function determineWinner(){
-    if(player ===1){
-        turn.innerHTML = 'Red Player Won!'
-    } else{
-        turn.innerHTML = 'Yellow Player Won!'
-    }
-}
+
 function horizontal(row,depth, box, turn, event){
     let determine = false 
     let arr=[]
@@ -117,8 +127,7 @@ function horizontal(row,depth, box, turn, event){
             }
         }
     if(determine===true){
-        document.getElementById('board').removeEventListener('click',clickEvent)
-        document.getElementById('clicker').removeEventListener('click', clickEvent)
+        removeListners()
         determineWinner()
 
     } 
@@ -159,8 +168,7 @@ if(arr.length>=4){
             }
         }
     if(determine===true){
-        document.getElementById('board').removeEventListener('click',clickEvent)
-        document.getElementById('clicker').removeEventListener('click', clickEvent)
+        removeListners()
         determineWinner()
 
     } 
@@ -213,10 +221,8 @@ function diagonalReverse(row,depth, box, turn, event){
                 }
             }
         if(determine===true){
-            document.getElementById('board').removeEventListener('click',clickEvent)
-            document.getElementById('clicker').removeEventListener('click', clickEvent)
+            removeListners()
             determineWinner()
-    
         } 
     
     }
@@ -238,7 +244,6 @@ function resetBoard(){
     allPlay[i].classList.remove('yellow')
     allPlay[i].classList.remove('red')
   }
-//   document.getElementById('board').addEventListener('click', clickEvent)
   document.getElementById('clicker').addEventListener('click', clickEvent)
   player = 0;
   turns = 0;
