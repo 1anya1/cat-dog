@@ -1,3 +1,16 @@
+body #clicker {
+  display: flex;
+  width: fit-content;
+  padding: 3vw;
+  padding-bottom: 0;
+  margin: 0 auto;
+}
+body #clicker .click {
+  margin: 0.5vw;
+  border-left: 1.99vw solid transparent;
+  border-right: 1.99vw solid transparent;
+  border-top: 2vw solid #f00;
+}
 body #board {
   display: flex;
   width: fit-content;
@@ -6,12 +19,45 @@ body #board {
   margin: 0 auto;
   position: relative;
 }
-body #board #clicker {
-  display: flex;
+body #board .row {
   width: fit-content;
-  padding: 3vw;
-  padding-bottom: 0;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #64BED3;
+}
+body #board .box {
+  height: 4vw;
+  width: 4vw;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+  margin: 0.5vw;
+}
+body #board .yellow {
+  background-image: url("image/dog-yellow.png");
+  background-size: cover;
+  background-repeat: none;
+  position: relative;
+  animation: new-item-animation 0.3s linear forwards;
+}
+body #board .red {
+  background-image: url("image/catred.png");
+  background-size: cover;
+  background-repeat: none;
+  position: relative;
+  animation: new-item-animation 0.3s linear forwards;
+}
+
+@keyframes new-item-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-60vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
