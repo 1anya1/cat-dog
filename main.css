@@ -23,6 +23,7 @@ body #clicker .click{
   border-left: 1.99vw solid transparent;
   border-right: 1.99vw solid transparent;
   border-top: 2vw solid #f00;
+  cursor: grab;
  }
  .row{
   width: fit-content;

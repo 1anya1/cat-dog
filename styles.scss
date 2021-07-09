@@ -10,6 +10,7 @@ body{
             border-left: 1.99vw solid transparent;
             border-right: 1.99vw solid transparent;
             border-top: 2vw solid #f00;
+            cursor: pointer;
          }
     }
     #board{
@@ -50,6 +51,9 @@ body{
             animation: new-item-animation .3s linear forwards;
           }
         
+    }
+    #reset{
+        cursor: pointer;
     }
 }
 @keyframes new-item-animation {

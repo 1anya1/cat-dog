@@ -10,6 +10,7 @@ body #clicker .click {
   border-left: 1.99vw solid transparent;
   border-right: 1.99vw solid transparent;
   border-top: 2vw solid #f00;
+  cursor: pointer;
 }
 body #board {
   display: flex;
@@ -47,6 +48,9 @@ body #board .red {
   background-repeat: none;
   position: relative;
   animation: new-item-animation 0.3s linear forwards;
+}
+body #reset {
+  cursor: pointer;
 }
 
 @keyframes new-item-animation {
