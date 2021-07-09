@@ -5,12 +5,23 @@ let width = 7;
 let depth = 6;
 let board = document.getElementById('board')
 let reset = document.getElementById('reset')
-
+let clicker = document.getElementById('clicker')
 let turn = document.getElementById('players-turn')
 turn.innerHTML = 'Red Turn'
 
-createBoard(width, depth, board)
 
+
+createClick(width, clicker)
+createBoard(width, depth, board)
+function createClick(width,clicker){
+    for(let i=0; i<width; i++){
+        let row = document.createElement('div')
+        row.id='row_'+i
+        row.className = 'click';
+        clicker.appendChild(row)
+    }
+
+}
 function createBoard(width, depth, board){
 for(let i=0; i<width; i++){
     let row = document.createElement('div')
@@ -30,9 +41,14 @@ function clickEvent(event){
     turns++;
     let turn = document.getElementById('players-turn')
     event.preventDefault();
-    let rowId = event.srcElement.id.split('')[0]
+    let end = event.srcElement.id.split('')
+    console.log(event.srcElement.id.split(''))
+    console.log(end[end.length-1])
+    let start = end[end.length-1]
+
+    // let rowId = event.srcElement.id.split('')[0]
     for(let i=0; i<depth; i++){
-       let box = document.getElementById(rowId+'_'+i);
+       let box = document.getElementById(start+'_'+i);
     //    console.log(box)
        if(box.className === 'box'){
            if(player===1){
@@ -46,19 +62,25 @@ function clickEvent(event){
             turn.innerHTML = 'Yellow Turn'
             player=1;
            }
-           vertical(rowId, i, box.className, turn, event)
-           horizontal(rowId, i, box.id, turn, event)
-           diagonal(rowId, i, box.id, turn, event)
-           diagonalReverse(rowId, i, box.id, turn, event)
+           vertical(start, i, box.className, turn, event)
+           horizontal(start, i, box.id, turn, event)
+           diagonal(start, i, box.id, turn, event)
+           diagonalReverse(start, i, box.id, turn, event)
            break;
        } 
         
     }
 }
-
-document.getElementById('board').addEventListener('click', clickEvent)
+function mouseEvent(event){
+    event.preventDefault();
+    let end = event.srcElement.id.split('')
+    let start = end[end.length-1]
+    let box = document.getElementById(start);
+    console.log(box)
+}
+document.getElementById('clicker').addEventListener('click', clickEvent)
 document.getElementById('reset').addEventListener('click', resetBoard)
-
+document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
 function vertical(row,depth, box, turn, event ){
     let winningArr =[]
     if(depth>=3){
