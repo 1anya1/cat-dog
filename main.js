@@ -1,18 +1,20 @@
 
-let player = 0;
-let turns = 0;
-let width = 7; 
-let depth = 6;
+let player = 0; let turns = 0;
+let width = 7; let depth = 6;
 let board = document.getElementById('board')
 let reset = document.getElementById('reset')
 let clicker = document.getElementById('clicker')
 let turn = document.getElementById('players-turn')
 turn.innerHTML = 'Red Turn'
-
-
-
 createClick(width, clicker)
 createBoard(width, depth, board)
+document.getElementById('clicker').addEventListener('click', clickEvent)
+document.getElementById('reset').addEventListener('click', resetBoard)
+document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
+
+
+
+//Creating Clicker for Pawns
 function createClick(width,clicker){
     for(let i=0; i<width; i++){
         let row = document.createElement('div')
@@ -20,8 +22,8 @@ function createClick(width,clicker){
         row.className = 'click';
         clicker.appendChild(row)
     }
-
 }
+//Creating Playing Board
 function createBoard(width, depth, board){
 for(let i=0; i<width; i++){
     let row = document.createElement('div')
@@ -37,19 +39,16 @@ for(let i=0; i<width; i++){
         }
     }
 }
+
+//Click Event
 function clickEvent(event){
     turns++;
     let turn = document.getElementById('players-turn')
     event.preventDefault();
     let end = event.srcElement.id.split('')
-    console.log(event.srcElement.id.split(''))
-    console.log(end[end.length-1])
     let start = end[end.length-1]
-
-    // let rowId = event.srcElement.id.split('')[0]
     for(let i=0; i<depth; i++){
        let box = document.getElementById(start+'_'+i);
-    //    console.log(box)
        if(box.className === 'box'){
            if(player===1){
             // AI_Play()
@@ -57,7 +56,6 @@ function clickEvent(event){
             box.className='yellow box';
             player=0;
            } else{
-           
             box.className='red box';
             turn.innerHTML = 'Yellow Turn'
             player=1;
@@ -67,10 +65,11 @@ function clickEvent(event){
            diagonal(start, i, box.id, turn, event)
            diagonalReverse(start, i, box.id, turn, event)
            break;
-       } 
-        
+        }    
     }
 }
+
+//Mouse Over event
 function mouseEvent(event){
     event.preventDefault();
     let end = event.srcElement.id.split('')
@@ -78,9 +77,20 @@ function mouseEvent(event){
     let box = document.getElementById(start);
     console.log(box)
 }
-document.getElementById('clicker').addEventListener('click', clickEvent)
-document.getElementById('reset').addEventListener('click', resetBoard)
-document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
+
+//Checking Winning Category
+function determineWinner(){
+    if(player ===1){
+        turn.innerHTML = 'Red Player Won!'
+    } else{
+        turn.innerHTML = 'Yellow Player Won!'
+    }
+}
+function removeListners(){
+    document.getElementById('board').removeEventListener('click',clickEvent)
+    document.getElementById('clicker').removeEventListener('click', clickEvent)
+}
+
 function vertical(row,depth, box, turn, event ){
     let winningArr =[]
     if(depth>=3){
@@ -91,18 +101,16 @@ function vertical(row,depth, box, turn, event ){
         let val;
         for(let i=0; i<3; i++){
             if(winningArr[i] === winningArr[i+1] && winningArr[i] === winningArr[i+2] && winningArr[i] === winningArr[i+3] ){
-                val= true; 
-               
+                val= true;   
             }
         }
         if(val===true){
-            document.getElementById('board').removeEventListener('click',clickEvent)
-            document.getElementById('clicker').removeEventListener('click', clickEvent)
-            turn.innerHTML=`is the winner`
+            removeListners()
+            determineWinner()
         }
-   
     }
 }
+
 function horizontal(row,depth, box, turn, event){
     let determine = false 
     let arr=[]
@@ -119,9 +127,8 @@ function horizontal(row,depth, box, turn, event){
             }
         }
     if(determine===true){
-        document.getElementById('board').removeEventListener('click',clickEvent)
-        document.getElementById('clicker').removeEventListener('click', clickEvent)
-       turn.innerHTML=`is the winner`
+        removeListners()
+        determineWinner()
 
     } 
 }
@@ -161,9 +168,8 @@ if(arr.length>=4){
             }
         }
     if(determine===true){
-        document.getElementById('board').removeEventListener('click',clickEvent)
-        document.getElementById('clicker').removeEventListener('click', clickEvent)
-       turn.innerHTML=`is the winner`
+        removeListners()
+        determineWinner()
 
     } 
 
@@ -207,20 +213,6 @@ function diagonalReverse(row,depth, box, turn, event){
         console.log(document.getElementById(i+'_'+j))
        arr.push(document.getElementById(i+'_'+j).className)  
     }  
-    // // console.log(widthDistance)
-    // if(widthDistance<depth){
-    //     console.log(depth-widthDistance)
-    //     distance = depth-widthDistance
-        
-    // }
-  
-    // if(turns >=4){
-    //     for(let i=row ,j=depth; j>=distance; i++, j--){
-    //         // console.log(document.getElementById(i+'_'+j))
-    //        arr.push(document.getElementById(i+'_'+j).className)  
-    //     }  
-    // }
-    console.log(arr)
     if(arr.length>=4){
         for(i=0 ; i < arr.length ; i++ ){
             if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
@@ -229,10 +221,8 @@ function diagonalReverse(row,depth, box, turn, event){
                 }
             }
         if(determine===true){
-            document.getElementById('board').removeEventListener('click',clickEvent)
-            document.getElementById('clicker').removeEventListener('click', clickEvent)
-           turn.innerHTML=`is the winner`
-    
+            removeListners()
+            determineWinner()
         } 
     
     }
@@ -254,7 +244,6 @@ function resetBoard(){
     allPlay[i].classList.remove('yellow')
     allPlay[i].classList.remove('red')
   }
-  document.getElementById('board').addEventListener('click', clickEvent)
   document.getElementById('clicker').addEventListener('click', clickEvent)
   player = 0;
   turns = 0;
