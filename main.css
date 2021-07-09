@@ -20,8 +20,8 @@ body #clicker{
 }
 body #clicker .click{
   margin: .5vw;
-  border-left: 2.45vw solid transparent;
-  border-right: 2.45vw solid transparent;
+  border-left: 1.99vw solid transparent;
+  border-right: 1.99vw solid transparent;
   border-top: 2vw solid #f00;
  }
  .row{
@@ -32,8 +32,8 @@ body #clicker .click{
   background-color: #64BED3;  
 }
 .box {
-  height: 5vw;
-  width: 5vw;
+  height: 4vw;
+  width: 4vw;
   border-radius: 50%;
   position: relative;
   background-color: white;
