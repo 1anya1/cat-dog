@@ -14,7 +14,6 @@ document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
 document.getElementById('clicker').addEventListener('mouseout', mouseOut)
 
 
-
 //Creating Clicker for Pawns
 function createClick(width,clicker){
     for(let i=0; i<width; i++){
@@ -72,46 +71,24 @@ function clickEvent(event){
 
 //Mouse Over event
 function mouseEvent(event){
-    // console.log(event.fromElement)
     event.preventDefault();
     let end = event.srcElement.id.split('')
     let start = end[end.length-1]
     let box = document.getElementById(start);
-    // console.log( box)
     if(box === null){
         return;
     } else{
-        // console.log(box)
-        box.style.backgroundColor='pink'
-       
-    }
-    
-     
-   
+        box.style.backgroundColor='pink' 
+    } 
 }
 function mouseOut(event){
     event.preventDefault();
-//    console.log('Its happening')
-//    let end = event.srcElement.id.split('')
-//    let start = end[end.length-1]
-//    let box = document.getElementById(start);
-//    console.log(box)
-//    event.style.backgroundColor='#64BED3'
-    console.log(event.srcElement.id)
     if(event.srcElement.id !== 'clicker'){
         let end = event.srcElement.id.split('')
-    let start = end[end.length-1]
-    let box = document.getElementById(start);
-    console.log(box)
-    box.style.backgroundColor='#64BED3'
-
+        let start = end[end.length-1]
+        let box = document.getElementById(start);
+        box.style.backgroundColor='#64BED3'
     }
-    
-    // let end = event.srcElement.id.split('')
-    // let start = end[end.length-1]
-    // console.log(start)
-//    console.log(event.target.id)
-
 }
 
 //Checking Winning Category
@@ -199,13 +176,11 @@ if(difference==0){
 }
 
 for(let i=start ,j=myJ; j<finish; i++, j++){
-    // console.log(document.getElementById(i+'_'+j))
    arr.push(document.getElementById(i+'_'+j).className)  
 }  
 if(arr.length>=4){
     for(i=0 ; i < arr.length ; i++ ){
         if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
-            // console.log(arr[i])
              determine=true
             }
         }
