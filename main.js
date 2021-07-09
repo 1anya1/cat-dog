@@ -81,9 +81,15 @@ function mouseEvent(event){
 //Checking Winning Category
 function determineWinner(){
     if(player ===1){
-        turn.innerHTML = 'Red Player Won!'
+        turn.innerHTML = 'Player 1 Won!'
+        let player = document.querySelector('.p1w')
+        let val = parseInt(player.innerText)+1
+        player.innerText=val;
     } else{
-        turn.innerHTML = 'Yellow Player Won!'
+        turn.innerHTML = 'Player 2 Won!'
+        let player = document.querySelector('.p2w')
+        let val = parseInt(player.innerText)+1
+        player.innerText=val;  
     }
 }
 function removeListners(){
@@ -184,14 +190,10 @@ function diagonalReverse(row,depth, box, turn, event){
     row = parseInt(row)
     depth = parseInt(depth)
     let arr=[];
-    let widthDistance = width-row-1;
-    let distance = 0;
     let sum = row+depth
     let start = 0;
     let finish = 0;
     let myJ=0;
-    console.log(sum)
-    console.log(row)
     if(sum > 6){
         myJ = sum-6;
         start= 6;
@@ -202,21 +204,16 @@ function diagonalReverse(row,depth, box, turn, event){
         finish = 6;
 
     } else{
-        console.log('THIS LOOP')
         myJ = 0;
         start= row+depth;
         finish = row+depth+1
-        console.log('finish'+finish)
-
     }
     for(let i=start ,j=myJ, k=0; k<finish; i--, j++, k++){
-        console.log(document.getElementById(i+'_'+j))
        arr.push(document.getElementById(i+'_'+j).className)  
     }  
     if(arr.length>=4){
         for(i=0 ; i < arr.length ; i++ ){
             if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
-                // console.log(arr[i])
                  determine=true
                 }
             }
