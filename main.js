@@ -28,7 +28,7 @@ for(let i=0; i<width; i++){
     row.id = i;
     row.className='row'
     for(let j=depth-1; 0<=j ; j--){
-        const newBlock = document.createElement('div') 
+        const newBlock = document.createElement('div')
         newBlock.id = i +'_'+j
         newBlock.className = 'box'
         newBlock.textContent= '';
@@ -97,6 +97,7 @@ function vertical(row,depth, box, turn, event ){
         }
         if(val===true){
             document.getElementById('board').removeEventListener('click',clickEvent)
+            document.getElementById('clicker').removeEventListener('click', clickEvent)
             turn.innerHTML=`is the winner`
         }
    
@@ -119,6 +120,7 @@ function horizontal(row,depth, box, turn, event){
         }
     if(determine===true){
         document.getElementById('board').removeEventListener('click',clickEvent)
+        document.getElementById('clicker').removeEventListener('click', clickEvent)
        turn.innerHTML=`is the winner`
 
     } 
@@ -160,6 +162,7 @@ if(arr.length>=4){
         }
     if(determine===true){
         document.getElementById('board').removeEventListener('click',clickEvent)
+        document.getElementById('clicker').removeEventListener('click', clickEvent)
        turn.innerHTML=`is the winner`
 
     } 
@@ -227,6 +230,7 @@ function diagonalReverse(row,depth, box, turn, event){
             }
         if(determine===true){
             document.getElementById('board').removeEventListener('click',clickEvent)
+            document.getElementById('clicker').removeEventListener('click', clickEvent)
            turn.innerHTML=`is the winner`
     
         } 
@@ -251,6 +255,7 @@ function resetBoard(){
     allPlay[i].classList.remove('red')
   }
   document.getElementById('board').addEventListener('click', clickEvent)
+  document.getElementById('clicker').addEventListener('click', clickEvent)
   player = 0;
   turns = 0;
   turn.innerHTML = 'Red Turn'
