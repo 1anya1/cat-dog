@@ -11,6 +11,7 @@ createBoard(width, depth, board)
 document.getElementById('clicker').addEventListener('click', clickEvent)
 document.getElementById('reset').addEventListener('click', resetBoard)
 document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
+document.getElementById('clicker').addEventListener('mouseout', mouseOut)
 
 
 
@@ -71,11 +72,46 @@ function clickEvent(event){
 
 //Mouse Over event
 function mouseEvent(event){
+    // console.log(event.fromElement)
     event.preventDefault();
     let end = event.srcElement.id.split('')
     let start = end[end.length-1]
     let box = document.getElementById(start);
+    // console.log( box)
+    if(box === null){
+        return;
+    } else{
+        // console.log(box)
+        box.style.backgroundColor='pink'
+       
+    }
+    
+     
+   
+}
+function mouseOut(event){
+    event.preventDefault();
+//    console.log('Its happening')
+//    let end = event.srcElement.id.split('')
+//    let start = end[end.length-1]
+//    let box = document.getElementById(start);
+//    console.log(box)
+//    event.style.backgroundColor='#64BED3'
+    console.log(event.srcElement.id)
+    if(event.srcElement.id !== 'clicker'){
+        let end = event.srcElement.id.split('')
+    let start = end[end.length-1]
+    let box = document.getElementById(start);
     console.log(box)
+    box.style.backgroundColor='#64BED3'
+
+    }
+    
+    // let end = event.srcElement.id.split('')
+    // let start = end[end.length-1]
+    // console.log(start)
+//    console.log(event.target.id)
+
 }
 
 //Checking Winning Category
