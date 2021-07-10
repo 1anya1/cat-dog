@@ -1,22 +1,38 @@
 body{
+    background-image: url("image/background.jpeg");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+    
+    .header{
+        display: flex;
+        justify-content: center;
+        img{
+            height: 15vw;
+        }
+    }
+    .main{
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+    }
     #clicker{
         display: flex;
         width: fit-content;
-        padding: 3vw;
         padding-bottom: 0;
          margin: 0 auto;
          .click{
             margin: .5vw;
             border-left: 1.99vw solid transparent;
             border-right: 1.99vw solid transparent;
-            border-top: 2vw solid #f00;
+            border-top: 2vw solid #EE3B33;
+            cursor: pointer;
          }
     }
     #board{
         display: flex;
         width: fit-content;
         padding: 1vw;
-        background-color: #64BED3;
+        background-color: #68599D;
         margin: 0 auto;
         position: relative;
         .row{
@@ -24,11 +40,11 @@ body{
             display: flex;
             flex-direction: column;
             position: relative;
-            background-color: #64BED3;  
+            background-color: #68599D;  
           }
           .box {
-            height: 4vw;
-            width: 4vw;
+            height: 5vw;
+            width: 5vw;
             border-radius: 50%;
             position: relative;
             background-color: white;
@@ -50,6 +66,9 @@ body{
             animation: new-item-animation .3s linear forwards;
           }
         
+    }
+    #reset{
+        cursor: pointer;
     }
 }
 @keyframes new-item-animation {
