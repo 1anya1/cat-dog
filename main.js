@@ -5,7 +5,7 @@ let board = document.getElementById('board')
 let reset = document.getElementById('reset')
 let clicker = document.getElementById('clicker')
 let turn = document.getElementById('players-turn')
-turn.innerHTML = 'Red Turn'
+turn.innerHTML = 'Player 1 Turn'
 createClick(width, clicker)
 createBoard(width, depth, board)
 document.getElementById('clicker').addEventListener('click', clickEvent)
@@ -52,12 +52,12 @@ function clickEvent(event){
        if(box.className === 'box'){
            if(player===1){
             // AI_Play()
-            turn.innerHTML = 'Red Turn'
+            turn.innerHTML = 'Player 1 Turn'
             box.className='yellow box';
             player=0;
            } else{
             box.className='red box';
-            turn.innerHTML = 'Yellow Turn'
+            turn.innerHTML = 'Player 2 Turn'
             player=1;
            }
            vertical(start, i, box.className, turn, event)
@@ -259,5 +259,5 @@ function resetBoard(){
   
   player = 0;
   turns = 0;
-  turn.innerHTML = 'Red Turn'
+  turn.innerHTML = 'Player 1 Turn'
 }

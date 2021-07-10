@@ -7,19 +7,23 @@
     <title>Simple Matrix</title>
     <link  rel='stylesheet' href='styles.css'>
 </head>
+
 <body>
+    <nav>
+        This is my nav
+    </nav>
+    <div id='main'>
     <div class=header>
         <img src='image/catdog.png'>
     </div>
     <div class='main'>
+        <div class='turn'>
+            <h1 id='players-turn'></h1>
+            <button id='reset'>Clear Board</button>
+        </div>
     <div class=board>
         <div id='clicker'></div>
         <div id='board'></div>
-    </div>
-    <div class='player-stats'>
-    <div class='turn'>
-        <div id='players-turn'></div>
-        <button id='reset'>Clear Board</button>
     </div>
     <div class='total'>
         <div class='player1'>
@@ -32,7 +36,11 @@
         </div>
     </div>
 </div>
-    </div>
+</div>
+<footer>
+    This is my footer
+</footer>
+   
 
     <script src='main.js'></script>
 </body>

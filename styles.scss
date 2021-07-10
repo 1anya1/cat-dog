@@ -1,19 +1,51 @@
+@import "variables.scss";
 body{
-    background-image: url("image/background.jpeg");
-    background-repeat: repeat-x;
-    background-position: center;
-    background-size: contain;
+    margin: unset;
     
+    font-family: $body-font;
+    h1{
+        font-size: 2vw;
+        @include bp-small{
+            font-size: 5vw;
+        }
+    }
+    p{
+        font-size: 1vw;
+    }
+    nav{
+        background-color: $white;
+    }
+    #main{
+        background-image: url("image/background.jpeg");
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: contain;
+    }
     .header{
         display: flex;
         justify-content: center;
         img{
             height: 15vw;
+            @include bp-small{
+                height: 33vw;
+            }
+        }
+    }
+    .board{
+        @include bp-small{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 3;
         }
     }
     .main{
         display: grid;
-        grid-template-columns: 1fr .5fr;
+        grid-template-columns: .5fr 1fr .5fr;
+        @include bp-small{
+            grid-template-columns: unset;
+            grid-template-columns: 1fr 1fr;
+        }
     }
     #clicker{
         display: flex;
@@ -24,31 +56,43 @@ body{
             margin: .5vw;
             border-left: 1.99vw solid transparent;
             border-right: 1.99vw solid transparent;
-            border-top: 2vw solid #EE3B33;
+            border-top: 2vw solid $red;
             cursor: pointer;
+            @include bp-small{
+                border-left: 5.45vw solid transparent;
+                border-right: 5.45vw solid transparent;
+                border-top: 4vw solid $red;
+
+            }
          }
     }
     #board{
         display: flex;
         width: fit-content;
         padding: 1vw;
-        background-color: #68599D;
+        background-color: $purple;
         margin: 0 auto;
         position: relative;
+    
         .row{
             width: fit-content;
             display: flex;
             flex-direction: column;
             position: relative;
-            background-color: #68599D;  
+            background-color: $purple;  
           }
           .box {
             height: 5vw;
             width: 5vw;
             border-radius: 50%;
             position: relative;
-            background-color: white;
+            background-color: $white;
             margin: .5vw;
+            @include bp-small{
+                height: 11vw;
+                width: 11vw;
+
+            }
           }
           .yellow {
             background-image: url("image/dog-yellow.png");
