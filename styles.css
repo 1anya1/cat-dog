@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap");
 body {
   background-image: url("image/background.jpeg");
   background-repeat: repeat-x;
   background-position: center;
   background-size: contain;
+  font-family: "Nunito", sans-serif;
+}
+body h1 {
+  font-size: 2vw;
+}
+body p {
+  font-size: 1vw;
 }
 body .header {
   display: flex;
@@ -13,7 +21,13 @@ body .header img {
 }
 body .main {
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+@media only screen and (max-width: 1024px) {
+  body .main {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 0.5fr;
+  }
 }
 body #clicker {
   display: flex;

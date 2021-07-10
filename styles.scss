@@ -1,8 +1,16 @@
+@import "variables.scss";
 body{
     background-image: url("image/background.jpeg");
     background-repeat: repeat-x;
     background-position: center;
     background-size: contain;
+    font-family: $body-font;
+    h1{
+        font-size: 2vw;
+    }
+    p{
+        font-size: 1vw;
+    }
     
     .header{
         display: flex;
@@ -13,7 +21,11 @@ body{
     }
     .main{
         display: grid;
-        grid-template-columns: 1fr .5fr;
+        grid-template-columns: .5fr 1fr .5fr;
+        @include bp-large{
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr .5fr;
+        }
     }
     #clicker{
         display: flex;
@@ -24,7 +36,7 @@ body{
             margin: .5vw;
             border-left: 1.99vw solid transparent;
             border-right: 1.99vw solid transparent;
-            border-top: 2vw solid #EE3B33;
+            border-top: 2vw solid $red;
             cursor: pointer;
          }
     }
@@ -32,7 +44,7 @@ body{
         display: flex;
         width: fit-content;
         padding: 1vw;
-        background-color: #68599D;
+        background-color: $purple;
         margin: 0 auto;
         position: relative;
         .row{
@@ -40,14 +52,14 @@ body{
             display: flex;
             flex-direction: column;
             position: relative;
-            background-color: #68599D;  
+            background-color: $purple;  
           }
           .box {
             height: 5vw;
             width: 5vw;
             border-radius: 50%;
             position: relative;
-            background-color: white;
+            background-color: $white;
             margin: .5vw;
           }
           .yellow {

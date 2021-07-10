@@ -1,0 +1,70 @@
+// colors
+$red : #EE3B33;
+$blue: #0196D6;
+$purple: #68599D;
+$reen: #5EBE47;
+$white: white;
+
+
+$size-x-large: 1280px;
+$size-large: 1024px;
+$size-medium: 768px;
+$size-small: 568px;
+
+//Transition
+$transition_duration: .5s;
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap");
+// $header-font: 'Helvetica', sans-serif;
+$body-font: 'Nunito', sans-serif;
+
+@mixin bp-x-large {
+    @media only screen and (max-width: $size-x-large) {
+      @content;
+    }
+  }
+  
+  @mixin bp-large {
+    @media only screen and (max-width: $size-large) {
+      @content;
+    }
+  }
+  
+  @mixin bp-medium {
+    @media only screen and (max-width: $size-medium) {
+      @content;
+    }
+  }
+  
+  @mixin bp-small {
+    @media only screen and (max-width: $size-small) {
+      @content;
+    }
+  }
+  @mixin bp-custom($size-custom) {
+    @media only screen and (max-width: $size-custom) {
+      @content;
+    }
+  }
+
+//Default Transition
+@mixin transition($prop...) {
+	-webkit-transition-property: $prop;
+	-moz-transition-property: $prop;
+	-o-transition-property: $prop;
+	transition-property: $prop;
+	-webkit-transition-duration: $transition_duration;
+	-moz-transition-duration: $transition_duration;
+	-o-transition-duration: $transition_duration;
+	transition-duration: $transition_duration;
+	-webkit-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	transition-timing-function: ease;
+}
+//Transform
+@mixin transform($prop...) {
+	-webkit-transform: $prop;
+	-moz-transform: $prop;
+	transform: $prop;
+}
