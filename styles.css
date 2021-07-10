@@ -1,7 +1,23 @@
+body {
+  background-image: url("image/background.jpeg");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+}
+body .header {
+  display: flex;
+  justify-content: center;
+}
+body .header img {
+  height: 15vw;
+}
+body .main {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
 body #clicker {
   display: flex;
   width: fit-content;
-  padding: 3vw;
   padding-bottom: 0;
   margin: 0 auto;
 }
@@ -9,14 +25,14 @@ body #clicker .click {
   margin: 0.5vw;
   border-left: 1.99vw solid transparent;
   border-right: 1.99vw solid transparent;
-  border-top: 2vw solid #f00;
+  border-top: 2vw solid #EE3B33;
   cursor: pointer;
 }
 body #board {
   display: flex;
   width: fit-content;
   padding: 1vw;
-  background-color: #64BED3;
+  background-color: #68599D;
   margin: 0 auto;
   position: relative;
 }
@@ -25,11 +41,11 @@ body #board .row {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #64BED3;
+  background-color: #68599D;
 }
 body #board .box {
-  height: 4vw;
-  width: 4vw;
+  height: 5vw;
+  width: 5vw;
   border-radius: 50%;
   position: relative;
   background-color: white;

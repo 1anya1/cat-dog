@@ -78,7 +78,7 @@ function mouseEvent(event){
     if(box === null){
         return;
     } else{
-        box.style.backgroundColor='pink' 
+        box.style.backgroundColor='#5EBE47' 
     } 
 }
 function mouseOut(event){
@@ -87,7 +87,7 @@ function mouseOut(event){
         let end = event.srcElement.id.split('')
         let start = end[end.length-1]
         let box = document.getElementById(start);
-        box.style.backgroundColor='#64BED3'
+        box.style.backgroundColor='#68599D'
     }
 }
 
@@ -108,6 +108,8 @@ function determineWinner(){
 function removeListners(){
     document.getElementById('board').removeEventListener('click',clickEvent)
     document.getElementById('clicker').removeEventListener('click', clickEvent)
+    document.getElementById('clicker').removeEventListener('mouseover', mouseEvent)
+   
 }
 
 function vertical(row,depth, box, turn, event ){
@@ -253,6 +255,8 @@ function resetBoard(){
     allPlay[i].classList.remove('red')
   }
   document.getElementById('clicker').addEventListener('click', clickEvent)
+  document.getElementById('clicker').addEventListener('mouseover', mouseEvent)
+  
   player = 0;
   turns = 0;
   turn.innerHTML = 'Red Turn'
