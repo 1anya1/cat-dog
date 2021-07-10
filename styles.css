@@ -1,16 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap");
 body {
-  background-image: url("image/background.jpeg");
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: contain;
+  margin: unset;
   font-family: "Nunito", sans-serif;
 }
 body h1 {
   font-size: 2vw;
 }
+@media only screen and (max-width: 568px) {
+  body h1 {
+    font-size: 5vw;
+  }
+}
 body p {
   font-size: 1vw;
+}
+body nav {
+  background-color: white;
+}
+body #main {
+  background-image: url("image/background.jpeg");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
 }
 body .header {
   display: flex;
@@ -19,14 +30,27 @@ body .header {
 body .header img {
   height: 15vw;
 }
+@media only screen and (max-width: 568px) {
+  body .header img {
+    height: 33vw;
+  }
+}
+@media only screen and (max-width: 568px) {
+  body .board {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
 body .main {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 568px) {
   body .main {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: unset;
+    grid-template-columns: 1fr 1fr;
   }
 }
 body #clicker {
@@ -41,6 +65,13 @@ body #clicker .click {
   border-right: 1.99vw solid transparent;
   border-top: 2vw solid #EE3B33;
   cursor: pointer;
+}
+@media only screen and (max-width: 568px) {
+  body #clicker .click {
+    border-left: 5.45vw solid transparent;
+    border-right: 5.45vw solid transparent;
+    border-top: 4vw solid #EE3B33;
+  }
 }
 body #board {
   display: flex;
@@ -64,6 +95,12 @@ body #board .box {
   position: relative;
   background-color: white;
   margin: 0.5vw;
+}
+@media only screen and (max-width: 568px) {
+  body #board .box {
+    height: 11vw;
+    width: 11vw;
+  }
 }
 body #board .yellow {
   background-image: url("image/dog-yellow.png");
