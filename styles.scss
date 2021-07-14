@@ -2,10 +2,16 @@
 body{
     margin: unset;
     font-family: $body-font;
+    background-image: url("image/background.jpeg");
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: contain;
   
     h1{
         margin: unset;
         font-size: 2vw;
+        color: $white;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         @include bp-small{
             font-size: 5vw;
         }
@@ -13,6 +19,8 @@ body{
     h3{
         margin: unset;
         font-size: 1.5vw;
+        color: $white;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         @include bp-small{
             font-size: 3.5vw;
         }
@@ -23,19 +31,17 @@ body{
         font-weight: 700;
     }
     nav{
-        background-color: $white;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 20px 0;
         display: grid;
         grid-template-columns: .3fr 1fr .3fr;
         justify-items: center;
         align-items: center;
-        padding-top: 3px;
         .title{
             grid-column: 2/3;
             h1{
-                background: rgb(238,59,51);
-background: radial-gradient(circle, rgba(238,59,51,1) 0%, rgba(255,222,0,1) 100%);
-                 -webkit-background-clip: text;
-                 -webkit-text-fill-color: transparent;
+               color: $blue;
+               text-shadow: unset;
             }
         }
         .nav-bar{
@@ -56,10 +62,7 @@ background: radial-gradient(circle, rgba(238,59,51,1) 0%, rgba(255,222,0,1) 100%
        
     }
     #main{
-        background-image: url("image/background.jpeg");
-        background-repeat: repeat-x;
-        background-position: center;
-        background-size: contain;
+
     }
     .header{
         display: flex;
@@ -72,6 +75,7 @@ background: radial-gradient(circle, rgba(238,59,51,1) 0%, rgba(255,222,0,1) 100%
         }
     }
     .turn{
+        place-self: center;
         button{
             font-family: $body-font;
             font-size: 1vw;
@@ -81,11 +85,13 @@ background: radial-gradient(circle, rgba(238,59,51,1) 0%, rgba(255,222,0,1) 100%
         }
     }
     .board{
+        padding-bottom: 40px;
         @include bp-small{
             grid-row-start: 1;
             grid-row-end: 2;
             grid-column-start: 1;
             grid-column-end: 3;
+           
         }
     }
     .main{
@@ -159,6 +165,14 @@ background: radial-gradient(circle, rgba(238,59,51,1) 0%, rgba(255,222,0,1) 100%
             animation: new-item-animation .3s linear forwards;
           }
         
+    }
+    .total{
+        place-self: center;
+        display: flex;
+        flex-direction:column;
+        .scoreboard{
+            padding-bottom: 30px;
+        }
     }
     #reset{
         cursor: pointer;

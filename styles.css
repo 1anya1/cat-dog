@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;500;700;900&family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;600;700;900&display=swap");
 body {
   margin: unset;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-image: url("image/background.jpeg");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
 }
 body h1 {
   margin: unset;
   font-size: 2vw;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media only screen and (max-width: 568px) {
   body h1 {
@@ -16,6 +23,8 @@ body h1 {
 body h3 {
   margin: unset;
   font-size: 1.5vw;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media only screen and (max-width: 568px) {
   body h3 {
@@ -28,21 +37,19 @@ body p {
   font-weight: 700;
 }
 body nav {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px 0;
   display: grid;
   grid-template-columns: 0.3fr 1fr 0.3fr;
   justify-items: center;
   align-items: center;
-  padding-top: 3px;
 }
 body nav .title {
   grid-column: 2/3;
 }
 body nav .title h1 {
-  background: #ee3b33;
-  background: radial-gradient(circle, #ee3b33 0%, #ffde00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0196D6;
+  text-shadow: unset;
 }
 body nav .nav-bar .bar {
   width: 4vw;
@@ -57,12 +64,6 @@ body nav .nav-bar .bar {
     margin-bottom: 0.5vw;
   }
 }
-body #main {
-  background-image: url("image/background.jpeg");
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: contain;
-}
 body .header {
   display: flex;
   justify-content: center;
@@ -75,14 +76,20 @@ body .header img {
     height: 33vw;
   }
 }
+body .turn {
+  place-self: center;
+}
 body .turn button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: 1vw;
 }
 @media only screen and (max-width: 568px) {
   body .turn button {
     font-size: 3vw;
   }
+}
+body .board {
+  padding-bottom: 40px;
 }
 @media only screen and (max-width: 568px) {
   body .board {
@@ -164,6 +171,14 @@ body #board .red {
   background-repeat: none;
   position: relative;
   animation: new-item-animation 0.3s linear forwards;
+}
+body .total {
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+}
+body .total .scoreboard {
+  padding-bottom: 30px;
 }
 body #reset {
   cursor: pointer;
