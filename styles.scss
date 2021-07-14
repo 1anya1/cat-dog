@@ -1,16 +1,26 @@
 @import "variables.scss";
 body{
     margin: unset;
-    
     font-family: $body-font;
+  
     h1{
+        margin: unset;
         font-size: 2vw;
         @include bp-small{
             font-size: 5vw;
         }
     }
+    h3{
+        margin: unset;
+        font-size: 1.5vw;
+        @include bp-small{
+            font-size: 3.5vw;
+        }
+    }
     p{
+        margin: unset;
         font-size: 1vw;
+        font-weight: 700;
     }
     nav{
         background-color: $white;
@@ -28,6 +38,15 @@ body{
             height: 15vw;
             @include bp-small{
                 height: 33vw;
+            }
+        }
+    }
+    .turn{
+        button{
+            font-family: $body-font;
+            font-size: 1vw;
+            @include bp-small{
+                font-size: 3vw;
             }
         }
     }
@@ -54,8 +73,8 @@ body{
          margin: 0 auto;
          .click{
             margin: .5vw;
-            border-left: 1.99vw solid transparent;
-            border-right: 1.99vw solid transparent;
+            border-left: 2.49vw solid transparent;
+            border-right: 2.49vw solid transparent;
             border-top: 2vw solid $red;
             cursor: pointer;
             @include bp-small{
