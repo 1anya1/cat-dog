@@ -95,7 +95,7 @@ function mouseOut(event){
 function determineWinner(winningRow){
     for(i=0; i<winningRow.length; i++){
         // document.getElementById(winningRow[i]).style.backgroundBlendMode='luminosity';
-        document.getElementById(winningRow[i]).style.boxShadow='inset 0 0 0 2000px rgba(26,165,221, 0.6)';
+        document.getElementById(winningRow[i]).style.boxShadow='inset 0 0 0 2000px rgba(225,225,225, 0.6)';
         
     }
     if(player ===1){
