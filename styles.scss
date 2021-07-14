@@ -54,8 +54,8 @@ body{
          margin: 0 auto;
          .click{
             margin: .5vw;
-            border-left: 1.99vw solid transparent;
-            border-right: 1.99vw solid transparent;
+            border-left: 2.49vw solid transparent;
+            border-right: 2.49vw solid transparent;
             border-top: 2vw solid $red;
             cursor: pointer;
             @include bp-small{
