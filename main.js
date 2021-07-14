@@ -92,7 +92,12 @@ function mouseOut(event){
 }
 
 //Checking Winning Category
-function determineWinner(){
+function determineWinner(winningRow){
+    for(i=0; i<winningRow.length; i++){
+        // document.getElementById(winningRow[i]).style.backgroundBlendMode='luminosity';
+        document.getElementById(winningRow[i]).style.boxShadow='inset 0 0 0 2000px rgba(255, 255, 255, 0.3)';
+        
+    }
     if(player ===1){
         turn.innerHTML = 'Player 1 Won!'
         let player = document.querySelector('.p1w')
@@ -112,54 +117,60 @@ function removeListners(){
    
 }
 
-function vertical(row,depth, box, turn, event ){
+function vertical(row,depth){
     let winningArr =[]
+    let slots=[]
+    let winningRow =[]
     if(depth>=3){
         for(let i=depth; i>=0; i--){
             let boxy = document.getElementById(row+'_'+i);
             winningArr.push(boxy.className)
+            slots.push(boxy.id)
         }
         let val;
         for(let i=0; i<3; i++){
             if(winningArr[i] === winningArr[i+1] && winningArr[i] === winningArr[i+2] && winningArr[i] === winningArr[i+3] ){
+                winningRow.push(slots[i], slots[i+1], slots[i+2], slots[i+3])
                 val= true;   
             }
         }
         if(val===true){
             removeListners()
-            determineWinner()
+            determineWinner(winningRow)
         }
     }
 }
 
-function horizontal(row,depth, box, turn, event){
+function horizontal(row,depth){
     let determine = false 
-    let arr=[]
+    let arr=[];let slots=[];let winningRow =[];
     let currentPlay = document.getElementById(row+'_'+depth).className
     if(turns >=4){
         for(let i=0; i<width; i++){
-           arr.push(document.getElementById(i+'_'+depth).className)  
+            let boxy = document.getElementById(i+'_'+depth)
+           arr.push(boxy.className)  
+           slots.push(boxy.id)
         }  
     }
     for(i=0 ; i < arr.length ; i++ ){
         if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
-            console.log(arr[i])
+            winningRow.push(slots[i], slots[i+1], slots[i+2], slots[i+3])
              determine=true
             }
         }
     if(determine===true){
         removeListners()
-        determineWinner()
+        determineWinner(winningRow)
 
     } 
 }
 
-function diagonal(row,depth, box, turn, event){
+function diagonal(row,depth){
 let currentPlay = document.getElementById(row+'_'+depth).className
 let determine = false;
 row = parseInt(row)
 depth = parseInt(depth)
-let arr=[];
+let arr=[];let slots=[];let winningRow =[];
 let difference = row-depth
 let start = 0;
 let finish = 0;
@@ -179,16 +190,18 @@ if(difference==0){
 
 for(let i=start ,j=myJ; j<finish; i++, j++){
    arr.push(document.getElementById(i+'_'+j).className)  
+   slots.push(document.getElementById(i+'_'+j).id)
 }  
 if(arr.length>=4){
     for(i=0 ; i < arr.length ; i++ ){
         if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
+            winningRow.push(slots[i], slots[i+1], slots[i+2], slots[i+3])
              determine=true
             }
         }
     if(determine===true){
         removeListners()
-        determineWinner()
+        determineWinner(winningRow)
 
     } 
 
@@ -202,7 +215,7 @@ function diagonalReverse(row,depth, box, turn, event){
     let determine = false;
     row = parseInt(row)
     depth = parseInt(depth)
-    let arr=[];
+    let arr=[];let slots=[];let winningRow =[];
     let sum = row+depth
     let start = 0;
     let finish = 0;
@@ -223,16 +236,18 @@ function diagonalReverse(row,depth, box, turn, event){
     }
     for(let i=start ,j=myJ, k=0; k<finish; i--, j++, k++){
        arr.push(document.getElementById(i+'_'+j).className)  
+       slots.push(document.getElementById(i+'_'+j).id)  
     }  
     if(arr.length>=4){
         for(i=0 ; i < arr.length ; i++ ){
             if(arr[i] === currentPlay && arr[i]=== arr[i+1] && arr[i+1] === arr[i+2] && arr[i+2]===arr[i+3]){
+                winningRow.push(slots[i], slots[i+1], slots[i+2], slots[i+3])
                  determine=true
                 }
             }
         if(determine===true){
             removeListners()
-            determineWinner()
+            determineWinner(winningRow)
         } 
     
     }
@@ -252,6 +267,7 @@ function resetBoard(){
  let allPlay = document.getElementsByClassName('box')
  for (var i = 0; i < allPlay.length; i++) {
     allPlay[i].classList.remove('yellow')
+    allPlay[i].style.backgroundBlendMode = null;
     allPlay[i].classList.remove('red')
   }
   document.getElementById('clicker').addEventListener('click', clickEvent)
