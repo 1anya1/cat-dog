@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;600;700;900&display=swap");
 body {
   margin: unset;
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 body h1 {
   margin: unset;
@@ -28,6 +29,33 @@ body p {
 }
 body nav {
   background-color: white;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.3fr;
+  justify-items: center;
+  align-items: center;
+  padding-top: 3px;
+}
+body nav .title {
+  grid-column: 2/3;
+}
+body nav .title h1 {
+  background: #ee3b33;
+  background: radial-gradient(circle, #ee3b33 0%, #ffde00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body nav .nav-bar .bar {
+  width: 4vw;
+  height: 0.5vw;
+  margin-bottom: 0.3vw;
+  background-color: #5EBE47;
+}
+@media only screen and (max-width: 768px) {
+  body nav .nav-bar .bar {
+    width: 7vw;
+    height: 1vw;
+    margin-bottom: 0.5vw;
+  }
 }
 body #main {
   background-image: url("image/background.jpeg");
@@ -48,7 +76,7 @@ body .header img {
   }
 }
 body .turn button {
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1vw;
 }
 @media only screen and (max-width: 568px) {
