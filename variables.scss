@@ -17,9 +17,11 @@ $transition_duration: .5s;
 //Fonts
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;500;700;900&family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;600;700;900&display=swap');
 // $header-font: 'Helvetica', sans-serif;
 // $body-font: 'Nunito', sans-serif;
-$body-font: 'Montserrat', sans-serif;
+// $body-font: 'Montserrat', sans-serif;
+$body-font: 'Montserrat Alternates', sans-serif;
 
 @mixin bp-x-large {
     @media only screen and (max-width: $size-x-large) {
