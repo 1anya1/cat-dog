@@ -267,7 +267,7 @@ function resetBoard(){
  let allPlay = document.getElementsByClassName('box')
  for (var i = 0; i < allPlay.length; i++) {
     allPlay[i].classList.remove('yellow')
-    allPlay[i].style.backgroundBlendMode = null;
+    allPlay[i].style.boxShadow = null;
     allPlay[i].classList.remove('red')
   }
   document.getElementById('clicker').addEventListener('click', clickEvent)
