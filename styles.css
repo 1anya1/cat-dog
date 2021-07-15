@@ -37,12 +37,9 @@ body p {
   font-weight: 700;
 }
 body nav {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px 0;
-  display: grid;
-  grid-template-columns: 0.3fr 1fr 0.3fr;
-  justify-items: center;
-  align-items: center;
+  text-align: center;
 }
 body nav .title {
   grid-column: 2/3;
@@ -50,19 +47,6 @@ body nav .title {
 body nav .title h1 {
   color: #0196D6;
   text-shadow: unset;
-}
-body nav .nav-bar .bar {
-  width: 4vw;
-  height: 0.5vw;
-  margin-bottom: 0.3vw;
-  background-color: #5EBE47;
-}
-@media only screen and (max-width: 768px) {
-  body nav .nav-bar .bar {
-    width: 7vw;
-    height: 1vw;
-    margin-bottom: 0.5vw;
-  }
 }
 body .header {
   display: flex;
@@ -79,6 +63,21 @@ body .header img {
 body .turn {
   place-self: center;
 }
+@media only screen and (max-width: 568px) {
+  body .turn {
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+}
+body .turn h1 #players-turn {
+  height: 3vw;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 568px) {
+  body .turn h1 #players-turn {
+    height: 6vw;
+  }
+}
 body .turn button {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 1vw;
@@ -93,10 +92,9 @@ body .board {
 }
 @media only screen and (max-width: 568px) {
   body .board {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding-bottom: 20px;
   }
 }
 body .main {
@@ -105,8 +103,8 @@ body .main {
 }
 @media only screen and (max-width: 568px) {
   body .main {
-    grid-template-columns: unset;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr, 1fr, 0.1fr;
   }
 }
 body #clicker {
@@ -177,8 +175,47 @@ body .total {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 568px) {
+  body .total {
+    width: 85%;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
 body .total .scoreboard {
   padding-bottom: 30px;
+}
+@media only screen and (max-width: 568px) {
+  body .total .scoreboard {
+    display: none;
+  }
+}
+@media only screen and (max-width: 568px) {
+  body .total .players {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 568px) {
+  body .total .players .player1, body .total .players .player2 {
+    width: 40%;
+  }
+}
+body .total .players .player1 h1, body .total .players .player2 h1 {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+body .total .players .player1 h1 img, body .total .players .player2 h1 img {
+  height: 3vw;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 568px) {
+  body .total .players .player1 h1 img, body .total .players .player2 h1 img {
+    height: 6vw;
+  }
 }
 body #reset {
   cursor: pointer;

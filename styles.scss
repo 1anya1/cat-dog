@@ -31,12 +31,9 @@ body{
         font-weight: 700;
     }
     nav{
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.9);
         padding: 20px 0;
-        display: grid;
-        grid-template-columns: .3fr 1fr .3fr;
-        justify-items: center;
-        align-items: center;
+        text-align: center;
         .title{
             grid-column: 2/3;
             h1{
@@ -44,25 +41,6 @@ body{
                text-shadow: unset;
             }
         }
-        .nav-bar{
-            .bar{
-                width: 4vw;
-                height: .5vw;
-                margin-bottom: .3vw;
-                background-color: $green;
-                @include bp-medium{
-                    width: 7vw;
-                    height: 1vw;
-                    margin-bottom: 0.5vw;
-                }
-                
-            }
-
-        }
-       
-    }
-    #main{
-
     }
     .header{
         display: flex;
@@ -76,6 +54,20 @@ body{
     }
     .turn{
         place-self: center;
+        @include bp-small{
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+       
+        h1{
+            #players-turn{
+                height: 3vw;
+                border-radius: 50%;
+                @include bp-small{
+                    height: 6vw;
+                }
+            }
+        }
         button{
             font-family: $body-font;
             font-size: 1vw;
@@ -87,10 +79,9 @@ body{
     .board{
         padding-bottom: 40px;
         @include bp-small{
-            grid-row-start: 1;
-            grid-row-end: 2;
-            grid-column-start: 1;
-            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            padding-bottom: 20px;
            
         }
     }
@@ -98,8 +89,8 @@ body{
         display: grid;
         grid-template-columns: .5fr 1fr .5fr;
         @include bp-small{
-            grid-template-columns: unset;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: .1fr, 1fr, .1fr;
         }
     }
     #clicker{
@@ -170,8 +161,43 @@ body{
         place-self: center;
         display: flex;
         flex-direction:column;
+        @include bp-small{
+            width: 85%;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        
         .scoreboard{
             padding-bottom: 30px;
+            @include bp-small{
+                display: none;
+            }
+        }
+        .players{
+            @include bp-small{
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 20px;
+            }
+            .player1, .player2{
+                @include bp-small{
+                    width: 40%;
+                }
+                h1{
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: space-between;
+                img{
+                    height: 3vw;
+                    border-radius: 50%;
+                    @include bp-small{
+                        height: 6vw;
+                    }
+                }
+
+                }
+            }
         }
     }
     #reset{
