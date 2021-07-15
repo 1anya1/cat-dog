@@ -75,7 +75,8 @@ body .turn h1 #players-turn {
 }
 @media only screen and (max-width: 568px) {
   body .turn h1 #players-turn {
-    height: 6vw;
+    height: 10vw;
+    width: 10vw;
   }
 }
 body .turn button {
@@ -214,7 +215,8 @@ body .total .players .player1 h1 img, body .total .players .player2 h1 img {
 }
 @media only screen and (max-width: 568px) {
   body .total .players .player1 h1 img, body .total .players .player2 h1 img {
-    height: 6vw;
+    height: 10vw;
+    width: 10vw;
   }
 }
 body #reset {

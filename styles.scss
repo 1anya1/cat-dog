@@ -64,7 +64,8 @@ body{
                 height: 3vw;
                 border-radius: 50%;
                 @include bp-small{
-                    height: 6vw;
+                    height: 10vw;
+                    width: 10vw;
                 }
             }
         }
@@ -192,7 +193,8 @@ body{
                     height: 3vw;
                     border-radius: 50%;
                     @include bp-small{
-                        height: 6vw;
+                        height: 10vw;
+                        width: 10vw;
                     }
                 }
 
