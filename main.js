@@ -4,8 +4,10 @@ let width = 7; let depth = 6;
 let board = document.getElementById('board')
 let reset = document.getElementById('reset')
 let clicker = document.getElementById('clicker')
-let turn = document.getElementById('players-turn')
-turn.innerHTML = 'Player 1 Turn'
+let turn = document.getElementById('update-turn')
+turn.innerHTML= "Player <img id='players-turn'> Turn";
+let turnImage = document.getElementById('players-turn')
+turnImage.src='image/catred.png'
 createClick(width, clicker)
 createBoard(width, depth, board)
 document.getElementById('clicker').addEventListener('click', clickEvent)
@@ -52,12 +54,12 @@ function clickEvent(event){
        if(box.className === 'box'){
            if(player===1){
             // AI_Play()
-            turn.innerHTML = 'Player 1 Turn'
+            turn.src = "image/catred.png";
             box.className='yellow box';
             player=0;
            } else{
             box.className='red box';
-            turn.innerHTML = 'Player 2 Turn'
+            turn.src = "image/dog-yellow.png";
             player=1;
            }
            vertical(start, i, box.className, turn, event)
@@ -93,6 +95,7 @@ function mouseOut(event){
 
 //Checking Winning Category
 function determineWinner(winningRow){
+    let updateTurn = document.getElementById('update-turn')
     for(i=0; i<winningRow.length; i++){
         // document.getElementById(winningRow[i]).style.backgroundBlendMode='luminosity';
         // document.getElementById(winningRow[i]).style.boxShadow='inset 0 0 0 2000px rgba(225,225,225, 0.6)';
@@ -100,12 +103,16 @@ function determineWinner(winningRow){
         
     }
     if(player ===1){
-        turn.innerHTML = 'Player 1 Won!'
+        updateTurn.innerHTML='Player <img id="players-turn"> Won';
+        let turnImage = document.getElementById('players-turn');
+        turnImage.src = "image/catred.png";
         let player = document.querySelector('.p1w')
         let val = parseInt(player.innerText)+1
         player.innerText=val;
     } else{
-        turn.innerHTML = 'Player 2 Won!'
+        updateTurn.innerHTML='Player <img id="players-turn"> Won';
+        let turnImage = document.getElementById('players-turn');
+        turnImage.src = "image/dog-yellow.png";
         let player = document.querySelector('.p2w')
         let val = parseInt(player.innerText)+1
         player.innerText=val;  
@@ -277,5 +284,7 @@ function resetBoard(){
   
   player = 0;
   turns = 0;
-  turn.innerHTML = 'Player 1 Turn'
+  turn.innerHTML= "Player <img id='players-turn'> Turn";
+  let turnImage = document.getElementById('players-turn')
+  turnImage.src='image/catred.png'
 }
