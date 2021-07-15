@@ -75,7 +75,8 @@ body .turn h1 #players-turn {
 }
 @media only screen and (max-width: 568px) {
   body .turn h1 #players-turn {
-    height: 6vw;
+    height: 10vw;
+    width: 10vw;
   }
 }
 body .turn button {
