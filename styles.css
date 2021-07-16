@@ -15,6 +15,11 @@ body h1 {
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+@media only screen and (max-width: 1024px) {
+  body h1 {
+    font-size: 3.5vw;
+  }
+}
 @media only screen and (max-width: 568px) {
   body h1 {
     font-size: 5vw;
@@ -25,6 +30,11 @@ body h3 {
   font-size: 1.5vw;
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width: 1024px) {
+  body h3 {
+    font-size: 2.5vw;
+  }
 }
 @media only screen and (max-width: 568px) {
   body h3 {
@@ -53,11 +63,16 @@ body .header {
   justify-content: center;
 }
 body .header img {
-  height: 15vw;
+  height: 20vw;
+}
+@media only screen and (max-width: 1024px) {
+  body .header img {
+    height: 30vw;
+  }
 }
 @media only screen and (max-width: 568px) {
   body .header img {
-    height: 33vw;
+    height: 35vw;
   }
 }
 body .turn {
@@ -104,6 +119,7 @@ body .turn button {
   padding: 7px;
   font-weight: 600;
   border-radius: 40px;
+  background-color: white;
 }
 body .turn button:hover {
   background-color: #EE3B33;
@@ -118,6 +134,13 @@ body .turn button:hover {
 body .board {
   padding-bottom: 40px;
 }
+@media only screen and (max-width: 1024px) {
+  body .board {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+  }
+}
 @media only screen and (max-width: 568px) {
   body .board {
     grid-row-start: 2;
@@ -129,10 +152,16 @@ body .main {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
 }
+@media only screen and (max-width: 1024px) {
+  body .main {
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media only screen and (max-width: 568px) {
   body .main {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr, 1fr, 0.1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
   }
 }
 body #clicker {
@@ -150,14 +179,21 @@ body #clicker .click {
   margin: 0.5vw;
   border-left: 2.49vw solid transparent;
   border-right: 2.49vw solid transparent;
-  border-top: 2vw solid #EE3B33;
+  border-top: 3vw solid #EE3B33;
   cursor: pointer;
+}
+@media only screen and (max-width: 1024px) {
+  body #clicker .click {
+    border-left: 3.99vw solid transparent;
+    border-right: 3.99vw solid transparent;
+    border-top: 4vw solid #EE3B33;
+  }
 }
 @media only screen and (max-width: 568px) {
   body #clicker .click {
     border-left: 5.45vw solid transparent;
     border-right: 5.45vw solid transparent;
-    border-top: 4vw solid #EE3B33;
+    border-top: 5vw solid #EE3B33;
   }
 }
 body #board {
@@ -182,6 +218,12 @@ body #board .box {
   position: relative;
   background-color: white;
   margin: 0.5vw;
+}
+@media only screen and (max-width: 1024px) {
+  body #board .box {
+    height: 8vw;
+    width: 8vw;
+  }
 }
 @media only screen and (max-width: 568px) {
   body #board .box {
@@ -278,7 +320,7 @@ body .game-rules .intro {
 }
 body .game-rules .intro .game-header h1 {
   color: #0196D6;
-  padding: 100px 0;
+  padding: 40px 40px;
   text-shadow: unset;
 }
 @media only screen and (max-width: 568px) {
@@ -287,7 +329,7 @@ body .game-rules .intro .game-header h1 {
   }
 }
 body .game-rules .intro .plus {
-  padding: 100px 0;
+  padding: 40px 40px;
 }
 @media only screen and (max-width: 568px) {
   body .game-rules .intro .plus {
@@ -295,7 +337,7 @@ body .game-rules .intro .plus {
   }
 }
 body .game-rules .intro .plus .bar {
-  width: 100px;
+  width: 60px;
   height: 14px;
   background-color: #5EBE47;
 }

@@ -12,6 +12,9 @@ body{
         font-size: 2vw;
         color: $white;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        @include bp-large{
+            font-size: 3.5vw;
+        }
         @include bp-small{
             font-size: 5vw;
         }
@@ -21,6 +24,9 @@ body{
         font-size: 1.5vw;
         color: $white;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        @include bp-large{
+            font-size: 2.5vw;
+        }
         @include bp-small{
             font-size: 3.5vw;
         }
@@ -46,9 +52,12 @@ body{
         display: flex;
         justify-content: center;
         img{
-            height: 15vw;
+            height: 20vw;
+            @include bp-large{
+                height: 30vw;
+            }
             @include bp-small{
-                height: 33vw;
+                height: 35vw;
             }
         }
     }
@@ -92,6 +101,7 @@ body{
             padding: 7px;
             font-weight: 600;
             border-radius: 40px;
+            background-color: $white;
             &:hover{
                 background-color: $red;
                 color: $white;
@@ -104,6 +114,11 @@ body{
     }
     .board{
         padding-bottom: 40px;
+        @include bp-large{
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-column-end: 3;
+        }
         @include bp-small{
             grid-row-start: 2;
             grid-row-end: 3;
@@ -114,9 +129,13 @@ body{
     .main{
         display: grid;
         grid-template-columns: .5fr 1fr .5fr;
+        @include bp-large{
+            grid-template-rows: 1fr .1fr;
+            grid-template-columns: 1fr 1fr;
+        }
         @include bp-small{
             grid-template-columns: 1fr;
-            grid-template-rows: .1fr, 1fr, .1fr;
+            grid-template-rows: .1fr 1fr .1fr;
         }
     }
     #clicker{
@@ -131,12 +150,18 @@ body{
             margin: .5vw;
             border-left: 2.49vw solid transparent;
             border-right: 2.49vw solid transparent;
-            border-top: 2vw solid $red;
+            border-top: 3vw solid $red;
             cursor: pointer;
+            @include bp-large{
+                border-left: 3.99vw solid transparent;
+                border-right: 3.99vw solid transparent;
+                border-top: 4vw solid $red;
+
+            }
             @include bp-small{
                 border-left: 5.45vw solid transparent;
                 border-right: 5.45vw solid transparent;
-                border-top: 4vw solid $red;
+                border-top: 5vw solid $red;
 
             }
          }
@@ -163,6 +188,10 @@ body{
             position: relative;
             background-color: $white;
             margin: .5vw;
+            @include bp-large{
+                height: 8vw;
+                width: 8vw;
+            }
             @include bp-small{
                 height: 11vw;
                 width: 11vw;
@@ -252,7 +281,7 @@ body{
             .game-header{
                 h1{
                     color: $blue;
-                    padding: 100px 0;
+                    padding: 40px 40px;
                     text-shadow: unset;
                     @include bp-small{
                         padding: 20px 20px;
@@ -260,12 +289,12 @@ body{
                 }
             }
             .plus{
-                padding: 100px 0;
+                padding: 40px 40px;
                 @include bp-small{
                     padding: 20px 20px;
                 }
                 .bar{
-                    width: 100px;
+                    width: 60px;
                     height: 14px;
                     background-color: $green;
                     @include bp-small{
