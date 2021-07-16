@@ -60,6 +60,16 @@ body{
         }
        
         h1{
+            padding-bottom: 30px;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: space-around;
+            @include bp-small{
+                padding-bottom: 20px;
+                font-size: 7vw;
+            }
+            
             #players-turn{
                 height: 3vw;
                 border-radius: 50%;
@@ -69,12 +79,25 @@ body{
                     animation: pulse 1s linear infinite;
                 }
             }
+        
         }
         button{
             font-family: $body-font;
             font-size: 1vw;
+            width: 15.5vw;
+            color: $red;
+            font-size: 1.5vw;
+            border: unset;
+            padding: 7px;
+            font-weight: 600;
+            border-radius: 40px;
+            &:hover{
+                background-color: $red;
+                color: $white;
+            }
             @include bp-small{
-                font-size: 3vw;
+                font-size: 3.5vw;
+                width: 45vw;
             }
         }
     }
@@ -183,13 +206,14 @@ body{
             }
             .player1, .player2{
                 @include bp-small{
-                    width: 40%;
+                    width: 45%;
                 }
                 h1{
                 display: flex;
                 align-items: center;
                 align-content: center;
                 justify-content: space-between;
+                width: 110%;
                 img{
                     height: 3vw;
                     border-radius: 50%;
@@ -205,6 +229,9 @@ body{
     }
     #reset{
         cursor: pointer;
+        @include bp-small{
+            width: 110%;
+        }
     }
 }
 @keyframes new-item-animation {
