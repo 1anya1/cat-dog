@@ -5,7 +5,7 @@ body{
     background-image: url("image/background.jpeg");
         background-repeat: repeat-x;
         background-position: center;
-        background-size: contain;
+        background-size: cover;
   
     h1{
         margin: unset;
@@ -57,6 +57,7 @@ body{
         @include bp-small{
             grid-row-start: 3;
             grid-row-end: 4;
+            width: 60%;
         }
        
         h1{
@@ -123,6 +124,9 @@ body{
         width: fit-content;
         padding-bottom: 0;
          margin: 0 auto;
+         @include bp-small{
+             padding-bottom: 10px;
+         }
          .click{
             margin: .5vw;
             border-left: 2.49vw solid transparent;
@@ -213,7 +217,7 @@ body{
                 align-items: center;
                 align-content: center;
                 justify-content: space-between;
-                width: 110%;
+                width: 100%;
                 img{
                     height: 3vw;
                     border-radius: 50%;
@@ -230,7 +234,75 @@ body{
     #reset{
         cursor: pointer;
         @include bp-small{
-            width: 110%;
+            width: 100%;
+        }
+    }
+    .game-rules{
+        background: rgba(255, 255, 255, 0.9);
+        width: 90%;
+        margin: 0 auto;
+        .intro{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            @include bp-small{
+                margin-top: 30px;
+            }
+            .game-header{
+                h1{
+                    color: $blue;
+                    padding: 100px 0;
+                    text-shadow: unset;
+                    @include bp-small{
+                        padding: 20px 20px;
+                    }
+                }
+            }
+            .plus{
+                padding: 100px 0;
+                @include bp-small{
+                    padding: 20px 20px;
+                }
+                .bar{
+                    width: 100px;
+                    height: 14px;
+                    background-color: $green;
+                    @include bp-small{
+                        width: 40px;
+                        height: 8px;
+                    }
+                }
+                .one{
+                    transform: rotate(90deg);
+                    
+                }
+                .two{
+                    transform: translate(0px, -14px);      
+                    @include bp-small{
+                        transform: translate(0px, -8px);    
+                    }
+                    transition: transform 2s;
+                }
+                .one-transform{
+                    transform: rotate(130deg);
+                    transition: transform 2s;
+                }
+                .two-transform{
+                    transform: translate(0px, -14px) rotate(45deg);
+                    @include bp-small{
+                        transform: translate(0px, -8px) rotate(45deg);
+                    }
+                    transition: transform 2s;
+                }
+
+            }
+        }
+        .game-instructions{
+            display:none;
+        }
+        .show{
+            display: unset;
         }
     }
 }

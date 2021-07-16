@@ -287,4 +287,23 @@ function resetBoard(){
   turn.innerHTML= "Player <img id='players-turn'> Turn";
   let turnImage = document.getElementById('players-turn')
   turnImage.src='image/catred.png'
+
 }
+let gameRules = document.querySelector('.plus')
+gameRules.addEventListener('click', openRules)
+
+function openRules(){
+    if(document.querySelector('.one').className === 'bar one'){
+        document.querySelector('.one').classList.add('one-transform')
+        document.querySelector('.two').classList.add('two-transform')
+        document.querySelector('.game-instructions').classList.add('show')
+    } else {
+        document.querySelector('.one').classList.remove('one-transform')
+        document.querySelector('.two').classList.remove('two-transform')
+        document.querySelector('.game-instructions').classList.remove('show')
+    }
+   
+    
+}
+    
+

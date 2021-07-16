@@ -7,7 +7,7 @@ body {
   background-image: url("image/background.jpeg");
   background-repeat: repeat-x;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 body h1 {
   margin: unset;
@@ -67,6 +67,7 @@ body .turn {
   body .turn {
     grid-row-start: 3;
     grid-row-end: 4;
+    width: 60%;
   }
 }
 body .turn h1 {
@@ -139,6 +140,11 @@ body #clicker {
   width: fit-content;
   padding-bottom: 0;
   margin: 0 auto;
+}
+@media only screen and (max-width: 568px) {
+  body #clicker {
+    padding-bottom: 10px;
+  }
 }
 body #clicker .click {
   margin: 0.5vw;
@@ -234,7 +240,7 @@ body .total .players .player1 h1, body .total .players .player2 h1 {
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  width: 110%;
+  width: 100%;
 }
 body .total .players .player1 h1 img, body .total .players .player2 h1 img {
   height: 3vw;
@@ -251,8 +257,84 @@ body #reset {
 }
 @media only screen and (max-width: 568px) {
   body #reset {
-    width: 110%;
+    width: 100%;
   }
+}
+body .game-rules {
+  background: rgba(255, 255, 255, 0.9);
+  width: 90%;
+  margin: 0 auto;
+}
+body .game-rules .intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .intro {
+    margin-top: 30px;
+  }
+}
+body .game-rules .intro .game-header h1 {
+  color: #0196D6;
+  padding: 100px 0;
+  text-shadow: unset;
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .intro .game-header h1 {
+    padding: 20px 20px;
+  }
+}
+body .game-rules .intro .plus {
+  padding: 100px 0;
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .intro .plus {
+    padding: 20px 20px;
+  }
+}
+body .game-rules .intro .plus .bar {
+  width: 100px;
+  height: 14px;
+  background-color: #5EBE47;
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .intro .plus .bar {
+    width: 40px;
+    height: 8px;
+  }
+}
+body .game-rules .intro .plus .one {
+  transform: rotate(90deg);
+}
+body .game-rules .intro .plus .two {
+  transform: translate(0px, -14px);
+  transition: transform 2s;
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .intro .plus .two {
+    transform: translate(0px, -8px);
+  }
+}
+body .game-rules .intro .plus .one-transform {
+  transform: rotate(130deg);
+  transition: transform 2s;
+}
+body .game-rules .intro .plus .two-transform {
+  transform: translate(0px, -14px) rotate(45deg);
+  transition: transform 2s;
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .intro .plus .two-transform {
+    transform: translate(0px, -8px) rotate(45deg);
+  }
+}
+body .game-rules .game-instructions {
+  display: none;
+}
+body .game-rules .show {
+  display: unset;
 }
 
 @keyframes new-item-animation {
