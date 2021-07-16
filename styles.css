@@ -69,6 +69,19 @@ body .turn {
     grid-row-end: 4;
   }
 }
+body .turn h1 {
+  padding-bottom: 30px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 568px) {
+  body .turn h1 {
+    padding-bottom: 20px;
+    font-size: 7vw;
+  }
+}
 body .turn h1 #players-turn {
   height: 3vw;
   border-radius: 50%;
@@ -83,10 +96,22 @@ body .turn h1 #players-turn {
 body .turn button {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 1vw;
+  width: 15.5vw;
+  color: #EE3B33;
+  font-size: 1.5vw;
+  border: unset;
+  padding: 7px;
+  font-weight: 600;
+  border-radius: 40px;
+}
+body .turn button:hover {
+  background-color: #EE3B33;
+  color: white;
 }
 @media only screen and (max-width: 568px) {
   body .turn button {
-    font-size: 3vw;
+    font-size: 3.5vw;
+    width: 45vw;
   }
 }
 body .board {
@@ -201,7 +226,7 @@ body .total .scoreboard {
 }
 @media only screen and (max-width: 568px) {
   body .total .players .player1, body .total .players .player2 {
-    width: 40%;
+    width: 45%;
   }
 }
 body .total .players .player1 h1, body .total .players .player2 h1 {
@@ -209,6 +234,7 @@ body .total .players .player1 h1, body .total .players .player2 h1 {
   align-items: center;
   align-content: center;
   justify-content: space-between;
+  width: 110%;
 }
 body .total .players .player1 h1 img, body .total .players .player2 h1 img {
   height: 3vw;
@@ -222,6 +248,11 @@ body .total .players .player1 h1 img, body .total .players .player2 h1 img {
 }
 body #reset {
   cursor: pointer;
+}
+@media only screen and (max-width: 568px) {
+  body #reset {
+    width: 110%;
+  }
 }
 
 @keyframes new-item-animation {
