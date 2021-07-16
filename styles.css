@@ -373,10 +373,15 @@ body .game-rules .intro .plus .two-transform {
   }
 }
 body .game-rules .game-instructions {
-  display: none;
+  height: 0;
+  opacity: 0;
+  transition: height 2s, opacity 2s;
 }
 body .game-rules .show {
-  display: unset;
+  height: 200px;
+  opacity: 1;
+  background-color: pink;
+  transition: height 2s, opacity 2s;
 }
 
 @keyframes new-item-animation {
