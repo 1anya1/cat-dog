@@ -27,18 +27,18 @@ body h1 {
 }
 body h3 {
   margin: unset;
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media only screen and (max-width: 1024px) {
   body h3 {
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
 }
 @media only screen and (max-width: 568px) {
   body h3 {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
 }
 body p {
@@ -76,13 +76,19 @@ body .header img {
   }
 }
 body .turn {
-  place-self: center;
+  width: 80%;
+  padding-top: 60%;
+}
+@media only screen and (max-width: 1024px) {
+  body .turn {
+    padding-top: unset;
+  }
 }
 @media only screen and (max-width: 568px) {
   body .turn {
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 60%;
+    width: 65%;
   }
 }
 body .turn h1 {
@@ -92,31 +98,44 @@ body .turn h1 {
   align-items: center;
   justify-content: space-around;
 }
+@media only screen and (max-width: 1024px) {
+  body .turn h1 {
+    align-items: flex-start;
+  }
+}
 @media only screen and (max-width: 568px) {
   body .turn h1 {
     padding-bottom: 20px;
     font-size: 7vw;
+    align-items: center;
   }
 }
 body .turn h1 #players-turn {
-  height: 3vw;
+  height: 5vw;
+  width: 5vw;
   border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+@media only screen and (max-width: 1024px) {
+  body .turn h1 #players-turn {
+    height: 8vw;
+    width: 8vw;
+  }
 }
 @media only screen and (max-width: 568px) {
   body .turn h1 #players-turn {
-    height: 10vw;
-    width: 10vw;
-    animation: pulse 1s linear infinite;
+    height: 15vw;
+    width: 15vw;
   }
 }
 body .turn button {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 1vw;
-  width: 15.5vw;
+  width: 100%;
   color: #EE3B33;
   font-size: 1.5vw;
   border: unset;
-  padding: 7px;
+  padding: 20px;
   font-weight: 600;
   border-radius: 40px;
   background-color: white;
@@ -124,6 +143,12 @@ body .turn button {
 body .turn button:hover {
   background-color: #EE3B33;
   color: white;
+}
+@media only screen and (max-width: 1024px) {
+  body .turn button {
+    font-size: 3vw;
+    padding: 15px;
+  }
 }
 @media only screen and (max-width: 568px) {
   body .turn button {
@@ -151,6 +176,7 @@ body .board {
 body .main {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
+  justify-items: center;
 }
 @media only screen and (max-width: 1024px) {
   body .main {
@@ -246,9 +272,14 @@ body #board .red {
   animation: new-item-animation 0.3s linear forwards;
 }
 body .total {
-  place-self: center;
+  padding-top: 60%;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (max-width: 1024px) {
+  body .total {
+    padding-top: unset;
+  }
 }
 @media only screen and (max-width: 568px) {
   body .total {
@@ -258,7 +289,7 @@ body .total {
   }
 }
 body .total .scoreboard {
-  padding-bottom: 30px;
+  padding-bottom: 35px;
 }
 @media only screen and (max-width: 568px) {
   body .total .scoreboard {
@@ -269,27 +300,37 @@ body .total .scoreboard {
   body .total .players {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
   }
+}
+body .total .players .player1, body .total .players .player2 {
+  padding-bottom: 10px;
 }
 @media only screen and (max-width: 568px) {
   body .total .players .player1, body .total .players .player2 {
     width: 45%;
   }
 }
-body .total .players .player1 h1, body .total .players .player2 h1 {
+body .total .players .player1 h3, body .total .players .player2 h3 {
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: space-between;
   width: 100%;
 }
-body .total .players .player1 h1 img, body .total .players .player2 h1 img {
+body .total .players .player1 h3 img, body .total .players .player2 h3 img {
   height: 3vw;
+  width: 3vw;
   border-radius: 50%;
 }
+@media only screen and (max-width: 1024px) {
+  body .total .players .player1 h3 img, body .total .players .player2 h3 img {
+    height: 4vw;
+    width: 4vw;
+  }
+}
 @media only screen and (max-width: 568px) {
-  body .total .players .player1 h1 img, body .total .players .player2 h1 img {
+  body .total .players .player1 h3 img, body .total .players .player2 h3 img {
     height: 10vw;
     width: 10vw;
   }
@@ -337,7 +378,7 @@ body .game-rules .intro .plus {
   }
 }
 body .game-rules .intro .plus .bar {
-  width: 60px;
+  width: 40px;
   height: 14px;
   background-color: #5EBE47;
 }
@@ -352,7 +393,7 @@ body .game-rules .intro .plus .one {
 }
 body .game-rules .intro .plus .two {
   transform: translate(0px, -14px);
-  transition: transform 2s;
+  transition: transform 0.5s;
 }
 @media only screen and (max-width: 568px) {
   body .game-rules .intro .plus .two {
@@ -361,11 +402,11 @@ body .game-rules .intro .plus .two {
 }
 body .game-rules .intro .plus .one-transform {
   transform: rotate(130deg);
-  transition: transform 2s;
+  transition: transform 0.5s;
 }
 body .game-rules .intro .plus .two-transform {
   transform: translate(0px, -14px) rotate(45deg);
-  transition: transform 2s;
+  transition: transform 0.5s;
 }
 @media only screen and (max-width: 568px) {
   body .game-rules .intro .plus .two-transform {
@@ -375,13 +416,13 @@ body .game-rules .intro .plus .two-transform {
 body .game-rules .game-instructions {
   height: 0;
   opacity: 0;
-  transition: height 2s, opacity 2s;
+  transition: height 0.5s, opacity 0.5s;
 }
 body .game-rules .show {
   height: 200px;
   opacity: 1;
   background-color: pink;
-  transition: height 2s, opacity 2s;
+  transition: height 0.5s, opacity 0.5s;
 }
 
 @keyframes new-item-animation {

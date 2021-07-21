@@ -21,14 +21,14 @@ body{
     }
     h3{
         margin: unset;
-        font-size: 1.5vw;
+        font-size: 1.8vw;
         color: $white;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         @include bp-large{
-            font-size: 2.5vw;
+            font-size: 3vw;
         }
         @include bp-small{
-            font-size: 3.5vw;
+            font-size: 5vw;
         }
     }
     p{
@@ -62,11 +62,15 @@ body{
         }
     }
     .turn{
-        place-self: center;
+        width: 80%;
+        padding-top: 60%;
+        @include bp-large{
+            padding-top: unset;
+        }
         @include bp-small{
             grid-row-start: 3;
             grid-row-end: 4;
-            width: 60%;
+            width: 65%;
         }
        
         h1{
@@ -75,18 +79,29 @@ body{
             align-content: center;
             align-items: center;
             justify-content: space-around;
+            @include bp-large{
+                align-items: flex-start;
+               
+            }
             @include bp-small{
                 padding-bottom: 20px;
                 font-size: 7vw;
+                align-items: center;
             }
             
             #players-turn{
-                height: 3vw;
+                height: 5vw;
+                width: 5vw;
                 border-radius: 50%;
+                animation: pulse 1s linear infinite;
+                @include bp-large{
+                    height: 8vw;
+                    width: 8vw;
+                }
+
                 @include bp-small{
-                    height: 10vw;
-                    width: 10vw;
-                    animation: pulse 1s linear infinite;
+                    height: 15vw;
+                    width: 15vw;
                 }
             }
         
@@ -94,17 +109,21 @@ body{
         button{
             font-family: $body-font;
             font-size: 1vw;
-            width: 15.5vw;
+            width: 100%;
             color: $red;
             font-size: 1.5vw;
             border: unset;
-            padding: 7px;
+            padding: 20px;
             font-weight: 600;
             border-radius: 40px;
             background-color: $white;
             &:hover{
                 background-color: $red;
                 color: $white;
+            }
+            @include bp-large{
+                font-size: 3vw;
+                padding: 15px;
             }
             @include bp-small{
                 font-size: 3.5vw;
@@ -129,6 +148,7 @@ body{
     .main{
         display: grid;
         grid-template-columns: .5fr 1fr .5fr;
+        justify-items: center;
         @include bp-large{
             grid-template-rows: 1fr .1fr;
             grid-template-columns: 1fr 1fr;
@@ -216,9 +236,12 @@ body{
         
     }
     .total{
-        place-self: center;
+        padding-top: 60%;
         display: flex;
         flex-direction:column;
+        @include bp-large{
+            padding-top: unset;
+        }
         @include bp-small{
             width: 85%;
             grid-row-start: 1;
@@ -226,7 +249,7 @@ body{
         }
         
         .scoreboard{
-            padding-bottom: 30px;
+            padding-bottom: 35px;
             @include bp-small{
                 display: none;
             }
@@ -235,13 +258,14 @@ body{
             @include bp-small{
                 display: flex;
                 justify-content: space-between;
-                padding-bottom: 20px;
+                padding-bottom: 5px;
             }
             .player1, .player2{
+                padding-bottom: 10px;
                 @include bp-small{
                     width: 45%;
                 }
-                h1{
+                h3{
                 display: flex;
                 align-items: center;
                 align-content: center;
@@ -249,7 +273,12 @@ body{
                 width: 100%;
                 img{
                     height: 3vw;
+                    width: 3vw;
                     border-radius: 50%;
+                    @include bp-large{
+                        height: 4vw;
+                        width: 4vw;
+                    }
                     @include bp-small{
                         height: 10vw;
                         width: 10vw;
@@ -294,7 +323,7 @@ body{
                     padding: 20px 20px;
                 }
                 .bar{
-                    width: 60px;
+                    width: 40px;
                     height: 14px;
                     background-color: $green;
                     @include bp-small{
@@ -311,18 +340,18 @@ body{
                     @include bp-small{
                         transform: translate(0px, -8px);    
                     }
-                    transition: transform 2s;
+                    transition: transform .5s;
                 }
                 .one-transform{
                     transform: rotate(130deg);
-                    transition: transform 2s;
+                    transition: transform .5s;
                 }
                 .two-transform{
                     transform: translate(0px, -14px) rotate(45deg);
                     @include bp-small{
                         transform: translate(0px, -8px) rotate(45deg);
                     }
-                    transition: transform 2s;
+                    transition: transform .5s;
                 }
 
             }
@@ -330,13 +359,13 @@ body{
         .game-instructions{
             height: 0;
             opacity: 0;
-            transition: height 2s , opacity 2s;
+            transition: height .5s , opacity .5s;
         }
         .show{
             height: 200px;
             opacity: 1;
             background-color: pink;
-            transition: height 2s, opacity 2s;
+            transition: height .5s, opacity .5s;
         }
     }
 }
