@@ -66,6 +66,7 @@ body{
         padding-top: 60%;
         @include bp-large{
             padding-top: unset;
+            width: 65%;
         }
         @include bp-small{
             grid-row-start: 3;
@@ -73,7 +74,7 @@ body{
             width: 65%;
         }
        
-        h1{
+        #update-turn{
             padding-bottom: 30px;
             display: flex;
             align-content: center;
@@ -92,8 +93,8 @@ body{
             #players-turn{
                 height: 5vw;
                 width: 5vw;
-                border-radius: 50%;
                 animation: pulse 1s linear infinite;
+                border-radius: 50%;
                 @include bp-large{
                     height: 8vw;
                     width: 8vw;
@@ -102,6 +103,16 @@ body{
                 @include bp-small{
                     height: 15vw;
                     width: 15vw;
+                }
+            }
+            .win{
+                border:20px solid $green;
+                animation: borderChange 1s linear 3;
+                @include bp-large{
+                    border-width: 10px;
+                }
+                @include bp-small{
+                    border-width: 5px;
                 }
             }
         
@@ -152,10 +163,12 @@ body{
         @include bp-large{
             grid-template-rows: 1fr .1fr;
             grid-template-columns: 1fr 1fr;
+            padding-bottom: 40px;
         }
         @include bp-small{
             grid-template-columns: 1fr;
             grid-template-rows: .1fr 1fr .1fr;
+            padding-bottom: unset;
         }
     }
     #clicker{
@@ -308,26 +321,27 @@ body{
                 margin-top: 30px;
             }
             .game-header{
-                h1{
+                h3{
                     color: $blue;
-                    padding: 40px 40px;
+                    padding: 40px;
                     text-shadow: unset;
-                    @include bp-small{
-                        padding: 20px 20px;
+                    @include bp-large{
+                        padding: 20px;
                     }
                 }
             }
             .plus{
-                padding: 40px 40px;
+                padding: 40px;
                 @include bp-small{
-                    padding: 20px 20px;
+                    padding: 20px;
                 }
                 .bar{
                     width: 40px;
                     height: 14px;
                     background-color: $green;
+                    
                     @include bp-small{
-                        width: 40px;
+                        width: 20px;
                         height: 8px;
                     }
                 }
@@ -386,14 +400,17 @@ body{
     0% {
         -webkit-transform: scale(1);
         transform: scale(1);
+        border-color: $green;
     }
     50% {
        -webkit-transform: scale(0.8);
        transform: scale(0.8);
+       border-color:$yellow;
     }
     100% {
         -webkit-transform: scale(1);
        transform: scale(1);
+       border-color: $green;
     }
     }
-  
+   

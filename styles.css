@@ -82,6 +82,7 @@ body .turn {
 @media only screen and (max-width: 1024px) {
   body .turn {
     padding-top: unset;
+    width: 65%;
   }
 }
 @media only screen and (max-width: 568px) {
@@ -91,7 +92,7 @@ body .turn {
     width: 65%;
   }
 }
-body .turn h1 {
+body .turn #update-turn {
   padding-bottom: 30px;
   display: flex;
   align-content: center;
@@ -99,33 +100,47 @@ body .turn h1 {
   justify-content: space-around;
 }
 @media only screen and (max-width: 1024px) {
-  body .turn h1 {
+  body .turn #update-turn {
     align-items: flex-start;
   }
 }
 @media only screen and (max-width: 568px) {
-  body .turn h1 {
+  body .turn #update-turn {
     padding-bottom: 20px;
     font-size: 7vw;
     align-items: center;
   }
 }
-body .turn h1 #players-turn {
+body .turn #update-turn #players-turn {
   height: 5vw;
   width: 5vw;
-  border-radius: 50%;
   animation: pulse 1s linear infinite;
+  border-radius: 50%;
 }
 @media only screen and (max-width: 1024px) {
-  body .turn h1 #players-turn {
+  body .turn #update-turn #players-turn {
     height: 8vw;
     width: 8vw;
   }
 }
 @media only screen and (max-width: 568px) {
-  body .turn h1 #players-turn {
+  body .turn #update-turn #players-turn {
     height: 15vw;
     width: 15vw;
+  }
+}
+body .turn #update-turn .win {
+  border: 20px solid #5EBE47;
+  animation: borderChange 1s linear 3;
+}
+@media only screen and (max-width: 1024px) {
+  body .turn #update-turn .win {
+    border-width: 10px;
+  }
+}
+@media only screen and (max-width: 568px) {
+  body .turn #update-turn .win {
+    border-width: 5px;
   }
 }
 body .turn button {
@@ -182,12 +197,14 @@ body .main {
   body .main {
     grid-template-rows: 1fr 0.1fr;
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 40px;
   }
 }
 @media only screen and (max-width: 568px) {
   body .main {
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 1fr 0.1fr;
+    padding-bottom: unset;
   }
 }
 body #clicker {
@@ -359,22 +376,22 @@ body .game-rules .intro {
     margin-top: 30px;
   }
 }
-body .game-rules .intro .game-header h1 {
+body .game-rules .intro .game-header h3 {
   color: #0196D6;
-  padding: 40px 40px;
+  padding: 40px;
   text-shadow: unset;
 }
-@media only screen and (max-width: 568px) {
-  body .game-rules .intro .game-header h1 {
-    padding: 20px 20px;
+@media only screen and (max-width: 1024px) {
+  body .game-rules .intro .game-header h3 {
+    padding: 20px;
   }
 }
 body .game-rules .intro .plus {
-  padding: 40px 40px;
+  padding: 40px;
 }
 @media only screen and (max-width: 568px) {
   body .game-rules .intro .plus {
-    padding: 20px 20px;
+    padding: 20px;
   }
 }
 body .game-rules .intro .plus .bar {
@@ -384,7 +401,7 @@ body .game-rules .intro .plus .bar {
 }
 @media only screen and (max-width: 568px) {
   body .game-rules .intro .plus .bar {
-    width: 40px;
+    width: 20px;
     height: 8px;
   }
 }
@@ -439,14 +456,17 @@ body .game-rules .show {
   0% {
     -webkit-transform: scale(1);
     transform: scale(1);
+    border-color: #5EBE47;
   }
   50% {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
+    border-color: #FEB81D;
   }
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
+    border-color: #5EBE47;
   }
 }
 
