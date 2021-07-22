@@ -446,6 +446,7 @@ body .game-rules .game-instructions ul {
 }
 body .game-rules .show {
   margin-bottom: 40px;
+  margin-top: -30px;
   height: 250px;
   padding: 0 30px;
   display: flex;
