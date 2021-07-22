@@ -319,6 +319,7 @@ body{
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 40px;
             @include bp-small{
                 margin-top: 30px;
             }
@@ -415,6 +416,34 @@ body{
         }
     }
 }
+footer{
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    .social{
+        display: flex;
+  
+        justify-content: center;
+            svg{
+                padding: 20px;
+                height: 50px;
+                width: 50px;   
+                @include bp-small{
+                    padding: 5px;
+                    height: 30px; 
+                    width: 30px;
+                }
+                &:hover{
+                    path{
+                        transition: fill .5s;
+                        fill: $green;
+                    }
+                }
+            }
+            
+        }
+}
+
 @keyframes new-item-animation {
     from {
       opacity: 0;
