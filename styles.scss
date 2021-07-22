@@ -314,12 +314,12 @@ body{
         background: rgba(255, 255, 255, 0.9);
         width: 90%;
         margin: 0 auto;
+        margin-bottom: 40px;
         .intro{
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 40px;
             @include bp-small{
                 margin-top: 30px;
             }
@@ -387,7 +387,6 @@ body{
         }
         .show{
             margin-bottom: 40px;
-            margin-top: -30px;
             p{
                 display: unset;
             }

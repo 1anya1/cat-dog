@@ -366,13 +366,13 @@ body .game-rules {
   background: rgba(255, 255, 255, 0.9);
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 body .game-rules .intro {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
 }
 @media only screen and (max-width: 568px) {
   body .game-rules .intro {
@@ -446,7 +446,6 @@ body .game-rules .game-instructions ul {
 }
 body .game-rules .show {
   margin-bottom: 40px;
-  margin-top: -30px;
   height: 250px;
   padding: 0 30px;
   display: flex;
