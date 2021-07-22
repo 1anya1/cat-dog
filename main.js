@@ -55,11 +55,13 @@ function clickEvent(event){
            if(player===1){
             // AI_Play()
             turn.src = "image/catred.png";
+            turn.alt = 'cat turn'
             box.className='yellow box';
             player=0;
            } else{
             box.className='red box';
             turn.src = "image/dog-yellow.png";
+            turn.alt = 'dog turn'
             player=1;
            }
            vertical(start, i, box.className, turn, event)
@@ -105,6 +107,7 @@ function determineWinner(winningRow){
         updateTurn.style.color = '#EE3B33'
         let turnImage = document.getElementById('players-turn');
         turnImage.src = "image/catred.png";
+        turnImage.alt = 'cat won'
         turnImage.setAttribute("class", "win");
         let player = document.querySelector('.p1w')
         let val = parseInt(player.innerText)+1
@@ -114,6 +117,7 @@ function determineWinner(winningRow){
         updateTurn.style.color = '#EE3B33'
         let turnImage = document.getElementById('players-turn');
         turnImage.src = "image/dog-yellow.png";
+        turnImage.alt = 'dog won'
         turnImage.setAttribute("class", "win");
         let player = document.querySelector('.p2w')
         let val = parseInt(player.innerText)+1
