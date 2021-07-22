@@ -487,19 +487,19 @@ footer .social {
   display: flex;
   justify-content: center;
 }
-footer .social svg {
+footer .social a svg {
   padding: 20px;
   height: 50px;
   width: 50px;
 }
 @media only screen and (max-width: 568px) {
-  footer .social svg {
+  footer .social a svg {
     padding: 5px;
     height: 30px;
     width: 30px;
   }
 }
-footer .social svg:hover path, footer .social svg:focus path {
+footer .social a svg:hover path, footer .social a svg:focus path, footer .social a svg:active path {
   transition: fill 0.5s;
   fill: #5EBE47;
 }
