@@ -437,6 +437,12 @@ body .game-rules .game-instructions {
   opacity: 0;
   transition: height 0.5s, opacity 0.5s;
 }
+body .game-rules .game-instructions p {
+  display: none;
+}
+body .game-rules .game-instructions ul {
+  display: none;
+}
 body .game-rules .show {
   height: 250px;
   padding: 0 30px;
@@ -447,6 +453,12 @@ body .game-rules .show {
   background-color: white;
   opacity: 0.5;
   transition: height 0.5s, opacity 0.5s;
+}
+body .game-rules .show p {
+  display: unset;
+}
+body .game-rules .show ul {
+  display: unset;
 }
 @media only screen and (max-width: 768px) {
   body .game-rules .show {
