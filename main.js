@@ -8,6 +8,7 @@ let turn = document.getElementById('update-turn')
 turn.innerHTML= "Player <img id='players-turn'> Turn";
 let turnImage = document.getElementById('players-turn')
 turnImage.src='image/catred.png'
+turnImage.alt = 'cat'
 createClick(width, clicker)
 createBoard(width, depth, board)
 document.getElementById('clicker').addEventListener('click', clickEvent)
