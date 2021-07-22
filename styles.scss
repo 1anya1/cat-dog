@@ -376,8 +376,21 @@ body{
             height: 0;
             opacity: 0;
             transition: height .5s , opacity .5s;
+            p{
+                display: none;
+            }
+            ul{
+                display: none;
+            }
+           
         }
         .show{
+            p{
+                display: unset;
+            }
+            ul{
+                display: unset;
+            }
             height: 250px;
             padding: 0 30px;
             display: flex;
