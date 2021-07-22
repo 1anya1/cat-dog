@@ -43,8 +43,10 @@ body h3 {
 }
 body p {
   margin: unset;
-  font-size: 1vw;
+}
+body .heading {
   font-weight: 700;
+  padding: 1rem 0;
 }
 body nav {
   background: rgba(255, 255, 255, 0.9);
@@ -436,10 +438,30 @@ body .game-rules .game-instructions {
   transition: height 0.5s, opacity 0.5s;
 }
 body .game-rules .show {
-  height: 200px;
+  height: 250px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   opacity: 1;
-  background-color: pink;
+  background-color: white;
+  opacity: 0.5;
   transition: height 0.5s, opacity 0.5s;
+}
+@media only screen and (max-width: 768px) {
+  body .game-rules .show {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 568px) {
+  body .game-rules .show {
+    height: 450px;
+  }
+}
+body .game-rules .show ul {
+  padding: 1rem;
+  margin: unset;
+  padding-top: unset;
 }
 
 @keyframes new-item-animation {

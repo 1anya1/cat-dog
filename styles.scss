@@ -33,8 +33,10 @@ body{
     }
     p{
         margin: unset;
-        font-size: 1vw;
+    }
+    .heading{
         font-weight: 700;
+        padding: 1rem 0;
     }
     nav{
         background: rgba(255, 255, 255, 0.9);
@@ -376,10 +378,27 @@ body{
             transition: height .5s , opacity .5s;
         }
         .show{
-            height: 200px;
+            height: 250px;
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             opacity: 1;
-            background-color: pink;
+            background-color: $white;
+            opacity: .5;
             transition: height .5s, opacity .5s;
+            @include bp-medium{
+                height: 300px;
+            }
+            @include bp-small{
+                height: 450px;
+            }
+
+            ul{
+                padding: 1rem;
+                margin: unset;
+                padding-top: unset;
+            }
         }
     }
 }
