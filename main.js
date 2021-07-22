@@ -95,24 +95,26 @@ function mouseOut(event){
 
 //Checking Winning Category
 function determineWinner(winningRow){
-    let updateTurn = document.getElementById('update-turn')
+    let updateTurn = document.querySelector('#update-turn')
     for(i=0; i<winningRow.length; i++){
-        // document.getElementById(winningRow[i]).style.backgroundBlendMode='luminosity';
-        // document.getElementById(winningRow[i]).style.boxShadow='inset 0 0 0 2000px rgba(225,225,225, 0.6)';
         document.getElementById(winningRow[i]).style.filter='hue-rotate(220deg)';
         
     }
     if(player ===1){
         updateTurn.innerHTML='Player <img id="players-turn"> Won';
+        updateTurn.style.color = '#EE3B33'
         let turnImage = document.getElementById('players-turn');
         turnImage.src = "image/catred.png";
+        turnImage.setAttribute("class", "win");
         let player = document.querySelector('.p1w')
         let val = parseInt(player.innerText)+1
         player.innerText=val;
     } else{
         updateTurn.innerHTML='Player <img id="players-turn"> Won';
+        updateTurn.style.color = '#EE3B33'
         let turnImage = document.getElementById('players-turn');
         turnImage.src = "image/dog-yellow.png";
+        turnImage.setAttribute("class", "win");
         let player = document.querySelector('.p2w')
         let val = parseInt(player.innerText)+1
         player.innerText=val;  
@@ -285,6 +287,7 @@ function resetBoard(){
   player = 0;
   turns = 0;
   turn.innerHTML= "Player <img id='players-turn'> Turn";
+  turn.style.color = 'white'
   let turnImage = document.getElementById('players-turn')
   turnImage.src='image/catred.png'
 
