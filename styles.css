@@ -445,6 +445,7 @@ body .game-rules .game-instructions ul {
   display: none;
 }
 body .game-rules .show {
+  padding-bottom: 40px;
   height: 250px;
   padding: 0 30px;
   display: flex;
@@ -498,7 +499,7 @@ footer .social svg {
     width: 30px;
   }
 }
-footer .social svg:hover path {
+footer .social svg:hover path, footer .social svg:focus path {
   transition: fill 0.5s;
   fill: #5EBE47;
 }

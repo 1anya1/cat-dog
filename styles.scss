@@ -386,6 +386,7 @@ body{
            
         }
         .show{
+            padding-bottom: 40px;
             p{
                 display: unset;
             }
@@ -433,7 +434,7 @@ footer{
                     height: 30px; 
                     width: 30px;
                 }
-                &:hover{
+                &:hover, &:focus{
                     path{
                         transition: fill .5s;
                         fill: $green;
